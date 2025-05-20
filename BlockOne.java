@@ -18,10 +18,10 @@ public class BlockOne extends Actor
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("w"))
         {
             move(3);
-        } else if (Greenfoot.isKeyDown("down"))
+        } else if (Greenfoot.isKeyDown("s"))
         {
             move(-3);
         }
