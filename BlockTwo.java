@@ -12,8 +12,12 @@ public class BlockTwo extends Actor
      * Act - do whatever the BlockTwo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public BlockTwo(){
+        setImage("images/car02-n.png");
+    }
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

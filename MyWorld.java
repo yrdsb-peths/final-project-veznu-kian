@@ -6,5 +6,6 @@ public class MyWorld extends World {
         
         Ball ball = new Ball();
         addObject(ball,getWidth()/2,getHeight()/2);
+        
     }
 }

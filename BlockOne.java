@@ -12,8 +12,12 @@ public class BlockOne extends Actor
      * Act - do whatever the BlockOne wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public BlockOne(){
+        setImage("images/car01-n.png");
+    }
     public void act()
     {
-        // Add your action code here.
+        
     }
 }
