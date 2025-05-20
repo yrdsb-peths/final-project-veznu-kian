@@ -20,10 +20,10 @@ public class BlockTwo extends Actor
     {
         if(Greenfoot.isKeyDown("up"))
         {
-            move(3);
+            setLocation(getX(), getY()+2);
         } else if (Greenfoot.isKeyDown("down"))
         {
-            move(-3);
+            setLocation(getX(), getY()-2);
         }
     }
 }
