@@ -7,5 +7,10 @@ public class MyWorld extends World {
         Ball ball = new Ball();
         addObject(ball,getWidth()/2,getHeight()/2);
         
+        BlockOne blockOne = new BlockOne();
+        addObject(blockOne, 0, 200);
+        
+        BlockTwo blockTwo = new BlockTwo();
+        addObject(blockTwo, 600, 200);
     }
 }
