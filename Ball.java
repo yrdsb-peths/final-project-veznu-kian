@@ -8,12 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    /**
-     * Act - do whatever the Ball wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+    public Ball()
+    {
+        setImage("images/ball.png");
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        int randomNumber = Greenfoot.getRandomNumber(2);
+        if(randomNumber == 1)
+        {
+            setLocation(getX()+2, getY());
+
+        }
+        else
+        {
+            setLocation(getX()-2, getY());
+        }        
+        
     }
+    
+    
 }
