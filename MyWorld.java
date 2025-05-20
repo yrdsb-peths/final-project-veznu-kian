@@ -8,9 +8,9 @@ public class MyWorld extends World {
         addObject(ball,getWidth()/2,getHeight()/2);
         
         BlockOne blockOne = new BlockOne();
-        addObject(blockOne, 100, 200);
+        addObject(blockOne, 50, 200);
         
         BlockTwo blockTwo = new BlockTwo();
-        addObject(blockTwo, 500, 200);
+        addObject(blockTwo, 550, 200);
     }
 }
