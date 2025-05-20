@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BlockTwo here.
+ * Blocks used for pong
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Kian) 
+ * @version (May 20th 2025)
  */
 public class BlockTwo extends Actor
 {
@@ -18,6 +18,12 @@ public class BlockTwo extends Actor
     }
     public void act()
     {
-        
+        if(Greenfoot.isKeyDown("up"))
+        {
+            move(3);
+        } else if (Greenfoot.isKeyDown("down"))
+        {
+            move(-3);
+        }
     }
 }
