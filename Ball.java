@@ -6,9 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class Ball extends Actor
 {
-    
+    int randomNumber = Greenfoot.getRandomNumber(2);
     public Ball()
     {
         setImage("images/ball.png");
@@ -16,7 +17,7 @@ public class Ball extends Actor
     
     public void act()
     {
-        int randomNumber = Greenfoot.getRandomNumber(2);
+        
         if(randomNumber == 1)
         {
             setLocation(getX()+2, getY());
