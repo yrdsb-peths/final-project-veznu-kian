@@ -32,12 +32,10 @@ public class BlockOne extends Actor
     
     public void collide()
     {
-        if(isTouching(Ball.class))
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.deflect();
-            
-            
-        }
+        
+        
+        
+        
+        
     }    
 }
