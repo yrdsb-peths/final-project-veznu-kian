@@ -49,7 +49,9 @@ public class Ball extends Actor
         {
             setLocation(getX()-5, getY());
         }
+
     }    
-    
-    
+
+        
+        
 }
