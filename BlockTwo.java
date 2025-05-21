@@ -14,7 +14,7 @@ public class BlockTwo extends Actor
      */
     
     public BlockTwo(){
-        setImage("images/car02-n.png");
+        setImage("images/ppl1.png");
     }
     public void act()
     {
