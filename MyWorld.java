@@ -9,11 +9,11 @@ public class MyWorld extends World {
         Ball ball = new Ball();
         addObject(ball,getWidth()/2,getHeight()/2);
         
-        BlockOne blockOne = new BlockOne();
-        addObject(blockOne, 50, 200);
+        PersonOne personOne = new PersonOne();
+        addObject(personOne, 50, 200);
         
-        BlockTwo blockTwo = new BlockTwo();
-        addObject(blockTwo, 550, 200);
+        PersonTwo personTwo = new PersonTwo();
+        addObject(personTwo, 550, 200);
     }
     
     public void deflect()
