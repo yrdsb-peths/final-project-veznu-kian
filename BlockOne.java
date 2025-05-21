@@ -20,10 +20,10 @@ public class BlockOne extends Actor
     {
         if(Greenfoot.isKeyDown("w"))
         {
-            setLocation(getX(), getY()+2);
+            setLocation(getX(), getY()-2);
         } else if (Greenfoot.isKeyDown("s"))
         {
-            setLocation(getX(), getY()-2);
+            setLocation(getX(), getY()+2);
         }
     }
 }
