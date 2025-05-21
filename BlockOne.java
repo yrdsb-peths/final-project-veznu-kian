@@ -16,6 +16,7 @@ public class BlockOne extends Actor
     public BlockOne(){
         setImage("images/car01-n.png");
     }
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("w"))
@@ -25,5 +26,18 @@ public class BlockOne extends Actor
         {
             setLocation(getX(), getY()+2);
         }
+        
+        collide();
     }
+    
+    public void collide()
+    {
+        if(isTouching(Ball.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.deflect();
+            
+            
+        }
+    }    
 }

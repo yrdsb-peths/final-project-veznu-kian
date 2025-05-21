@@ -15,4 +15,12 @@ public class MyWorld extends World {
         BlockTwo blockTwo = new BlockTwo();
         addObject(blockTwo, 575, 200);
     }
+    
+    public void deflect()
+    {
+        
+        
+        
+        
+    }    
 }

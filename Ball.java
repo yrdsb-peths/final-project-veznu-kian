@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Ball extends Actor
 {
-    int randomNumber = Greenfoot.getRandomNumber(2);
+    int randomNumber = Greenfoot.getRandomNumber(6);
     public Ball()
     {
         setImage("images/ball.png");
@@ -23,10 +23,26 @@ public class Ball extends Actor
             setLocation(getX()+2, getY());
 
         }
-        else
+        else if(randomNumber == 2)
+        {
+            setLocation(getX()-2, getY()+2);
+        }
+        else if(randomNumber == 3)
+        {
+            setLocation(getX()-2, getY()-2);
+        }
+        else if(randomNumber == 4)
+        {
+            setLocation(getX()+2, getY()-2);
+        }
+        else if(randomNumber == 5)
+        {
+            setLocation(getX()+2, getY()+2);
+        }
+        else 
         {
             setLocation(getX()-2, getY());
-        }        
+        }
         
     }
     
