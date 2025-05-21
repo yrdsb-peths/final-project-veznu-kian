@@ -17,7 +17,13 @@ public class Ball extends Actor
     
     public void act()
     {
+        movmentPatterns();
         
+        
+    }
+    
+    public void movmentPatterns()
+    {
         if(randomNumber == 1)
         {
             setLocation(getX()+5, getY());
@@ -43,8 +49,7 @@ public class Ball extends Actor
         {
             setLocation(getX()-5, getY());
         }
-        
-    }
+    }    
     
     
 }
