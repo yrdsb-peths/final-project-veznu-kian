@@ -18,7 +18,16 @@ public class Ball extends Actor
     public void act()
     {
         movmentPatterns();
-        
+        if(isTouching(PersonOne.class))
+        {
+            turn(180);
+            movmentPatterns();
+        }
+        else if (isTouching(PersonTwo.class))
+        {
+            turn(180);
+            movmentPatterns();
+        }
         
     }
     
