@@ -53,7 +53,14 @@ public class Ball extends Actor
     {
         MyWorld world =(MyWorld) getWorld();
         
-        
+        if(getY() <= 0)
+        {
+            
+        }    
+        else if (getY() >= world.getHeight()-1) 
+        {
+            
+        }    
         
         
     }
