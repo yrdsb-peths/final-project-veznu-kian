@@ -69,28 +69,28 @@ public class Ball extends Actor
     {
         if(randomNumber == 1)
         {
-            setLocation(getX()+5, getY());
+            setLocation(getX()+1, getY());
 
         }
         else if(randomNumber == 2)
         {
-            setLocation(getX()-5, getY()+3);
+            setLocation(getX()-1, getY()+3);
         }
         else if(randomNumber == 3)
         {
-            setLocation(getX()-5, getY()-3);
+            setLocation(getX()-1, getY()-3);
         }
         else if(randomNumber == 4)
         {
-            setLocation(getX()+5, getY()-3);
+            setLocation(getX()+1, getY()-3);
         }
         else if(randomNumber == 5)
         {
-            setLocation(getX()+5, getY()+3);
+            setLocation(getX()+1, getY()+3);
         }
         else 
         {
-            setLocation(getX()-5, getY());
+            setLocation(getX()-1, getY());
         }
 
     }    
