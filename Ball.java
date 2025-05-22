@@ -46,6 +46,16 @@ public class Ball extends Actor
             
         }
         
+        
+    }
+    
+    private void checkWallBounce()
+    {
+        MyWorld world =(MyWorld) getWorld();
+        
+        
+        
+        
     }
     
     public void movmentPatterns()

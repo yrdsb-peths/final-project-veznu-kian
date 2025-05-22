@@ -1,0 +1,98 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+public class Ball extends Actor
+{
+    private int speed = 5;
+    private int randomNumber;
+    private boolean movingRight; // true if moving right, false if moving left
+    private int ySpeed; // vertical speed component
+
+    public Ball()
+    {
+        setImage("images/ball.png");
+        // Initialize horizontal direction randomly
+        movingRight = Greenfoot.getRandomNumber(2) == 0 ? true : false;
+        // Initialize vertical speed randomly -3, -2, -1, 0, 1, 2, or 3
+        ySpeed = Greenfoot.getRandomNumber(7) - 3; 
+        if (ySpeed == 0) ySpeed = 1; // prevent vertical speed 0 to keep it moving vertically
+    }
+
+    public void act()
+    {
+        moveBall();
+        checkWallBounce();
+        checkPlayerBounce();
+        checkGameOver();
+    }
+
+    private void moveBall()
+    {
+        int x = getX();
+        int y = getY();
+
+        if (movingRight)
+        {
+            x = x + speed;
+        }
+        else
+        {
+            x = x - speed;
+        }
+
+        y = y + ySpeed;
+
+        setLocation(x, y);
+    }
+
+    private void checkWallBounce()
+    {
+        MyWorld world = (MyWorld) getWorld();
+
+        if (getY() <= 0) 
+        {
+            // Bounce off top wall
+            setLocation(getX(), 0);
+            ySpeed = -ySpeed;
+        }
+        else if (getY() >= world.getHeight() - 1) 
+        {
+            // Bounce off bottom wall
+            setLocation(getX(), world.getHeight() - 1);
+            ySpeed = -ySpeed;
+        }
+    }
+
+    private void checkPlayerBounce()
+    {
+        if (isTouching(PersonOne.class))
+        {
+            bounceBack();
+        }
+        else if (isTouching(PersonTwo.class))
+        {
+            bounceBack();
+        }
+    }
+
+    private void bounceBack()
+    {
+        // Reverse horizontal direction
+        movingRight = !movingRight;
+
+        // Optionally randomize vertical speed on bounce to make movement less predictable
+        int newYSpeed = Greenfoot.getRandomNumber(7) - 3;
+        if (newYSpeed == 0) newYSpeed = 1; // avoid zero vertical speed
+        ySpeed = newYSpeed;
+    }
+
+    private void checkGameOver()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        // If the ball reaches the left or right edge, end game
+        if (getX() <= 0 || getX() >= world.getWidth() - 1)
+        {
+            // You can call a method in MyWorld to end the game or show game over screen
+            world.gameOver();
+        }
+    }
+}
