@@ -18,9 +18,7 @@ public class MyWorld extends World {
     
     public void gameOver()
     {
-    
-        
-        
-        
+        EndWorld gameOver = new EndWorld();
+        Greenfoot.setWorld(gameOver);
     }    
 }
