@@ -23,36 +23,27 @@ public class Ball extends Actor
         setImage("images/ball.png");
     }
     
-    int randomNumber = Greenfoot.getRandomNumber(6);
-    boolean justTurned = false;
+    
     public void act()
     {
-        movmentPatterns();
+        checkPlayerBounce();
+        checkWallBounce();
         checkGameOver();
-        if (isTouching(PersonOne.class))
+        
+        
+        
+    }
+    
+    private void checkPlayerBounce()
+    {
+        if()
         {
-            if(!justTurned)
-            {
-                randomNumber = Greenfoot.getRandomNumber(6);
-                invMovmentPatterns();
-                justTurned = true;
-            } else {
-                movmentPatterns();
-                justTurned = false;
-            }
-        } else if (isTouching(PersonTwo.class)){
-            if(!justTurned)
-            {
-                randomNumber = Greenfoot.getRandomNumber(6);
-                invMovmentPatterns();
-                justTurned = true;
-            } else {
-                movmentPatterns();
-                justTurned = false;
-            }
             
         }
-        
+        else if() 
+        {
+            
+        }
         
     }
     
@@ -72,66 +63,7 @@ public class Ball extends Actor
         
     }
     
-    public void movmentPatterns()
-    {
-        if(randomNumber == 1)
-        {
-            setLocation(getX()+1, getY());
-
-        }
-        else if(randomNumber == 2)
-        {
-            setLocation(getX()-1, getY()+3);
-        }
-        else if(randomNumber == 3)
-        {
-            setLocation(getX()-1, getY()-3);
-        }
-        else if(randomNumber == 4)
-        {
-            setLocation(getX()+1, getY()-3);
-        }
-        else if(randomNumber == 5)
-        {
-            setLocation(getX()+1, getY()+3);
-        }
-        else 
-        {
-            setLocation(getX()-1, getY());
-        }
-
-    }    
-
-    public void invMovmentPatterns()
-    {
-        if(randomNumber == 1)
-        {
-            setLocation(getX()-5, getY());
-
-        }
-        else if(randomNumber == 2)
-        {
-            setLocation(getX()+5, getY()-3);
-        }
-        else if(randomNumber == 3)
-        {
-            setLocation(getX()+5, getY()+3);
-        }
-        else if(randomNumber == 4)
-        {
-            setLocation(getX()-5, getY()+3);
-        }
-        else if(randomNumber == 5)
-        {
-            setLocation(getX()-5, getY()-3);
-        }
-        else 
-        {
-            setLocation(getX()+5, getY());
-        }
-
-    }    
-        
+   
     
     private void checkGameOver()
     {
