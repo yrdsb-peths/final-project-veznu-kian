@@ -20,9 +20,7 @@ public class SecondaryScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         setBackground("images/background_soccer.jpg ");
-        
-        OptionBackground background = new OptionBackground();
-        addObject(background, getWidth()/2, getHeight()/2);
+
         
         addObject(optionOne, getWidth()/2, getHeight()/2-100);
         addObject(optionTwo, getWidth()/2, getHeight()/2+70);

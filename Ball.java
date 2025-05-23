@@ -11,7 +11,7 @@ public class Ball extends Actor
 {
     private int speed = 5;
     private int direction = 0;
-    
+    GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
     public Ball()
     {
         //set image
@@ -22,6 +22,7 @@ public class Ball extends Actor
     public void act()
     {
         movmentPatterns();
+        checkGameOver();
         if (isTouching(PersonOne.class))
         {
             if(!justTurned)
@@ -125,12 +126,16 @@ public class Ball extends Actor
 
     }    
         
+    private boolean gameEnded = false;
     private void checkGameOver()
     {
         MyWorld world = (MyWorld) getWorld();
-        if(getX() <= 0 || getX() >= world.getWidth()-1)
+        if(getX() <= 0 || getX() >= world.getWidth()-1 && !gameEnded)
         {
             world.gameOver(); 
+            gameOver.play();
+            gameEnded = true;
+            
             
         }
     }
