@@ -14,12 +14,12 @@ public class PersonOne extends Actor
      */
     
     GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
-    GreenfootImage[] idle = new GreenfootImage[7];
+    GreenfootImage[] idle = new GreenfootImage[6];
     
     public PersonOne(){
         for(int i = 0; i < idle.length; i++)
         {
-           idle[i] = new GreenfootImage("images/Player_run" + i + ".png"); 
+           idle[i] = new GreenfootImage("images/Player_run/Run" + i + ".png"); 
         }
         setImage(idle[0]);
     }
