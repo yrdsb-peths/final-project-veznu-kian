@@ -11,12 +11,18 @@ public class Ball extends Actor
 {
     private int speed = 5;
     private int direction = 0;
+    
+    //Variable to know if game finished 
+    private boolean gameEnded = false;
+    //Sound used to indicate game is finished 
     GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
+    
     public Ball()
     {
         //set image
         setImage("images/ball.png");
     }
+    
     int randomNumber = Greenfoot.getRandomNumber(6);
     boolean justTurned = false;
     public void act()
@@ -126,7 +132,7 @@ public class Ball extends Actor
 
     }    
         
-    private boolean gameEnded = false;
+    
     private void checkGameOver()
     {
         MyWorld world = (MyWorld) getWorld();
