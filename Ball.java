@@ -18,6 +18,7 @@ public class Ball extends Actor
     //Sound used to indicate game is finished 
     GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
     
+    private boolean motionDirection = true;
     public Ball()
     {
         //set image
@@ -69,11 +70,13 @@ public class Ball extends Actor
         
         if(getY() <= 0)
         {
-            
+            ySpeed = ySpeed*-1;
+            xSpeed += 1;
         }    
         else if (getY() >= world.getHeight()-1) 
         {
-            
+            ySpeed = ySpeed*-1;
+            xSpeed += 1;
         }    
         
         
