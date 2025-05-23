@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Ball extends Actor
 {
-    private int speed = 5;
+    private int xSpeed = Greenfoot.getRandomNumber(5);
+    private int ySpeed = Greenfoot.getRandomNumber(5);
     private int direction = 0;
     
     //Variable to know if game finished 
@@ -26,11 +27,20 @@ public class Ball extends Actor
     
     public void act()
     {
+        moveBall();
+        
         checkPlayerBounce();
         checkWallBounce();
         checkGameOver();
         
         
+        
+    }
+    
+    private void moveBall()
+    {
+        
+        setLocation(getX() + xSpeed, getY()+ySpeed);
         
     }
     
