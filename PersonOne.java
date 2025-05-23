@@ -13,8 +13,15 @@ public class PersonOne extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
+    GreenfootImage[] idle = new GreenfootImage[7];
+    
     public PersonOne(){
-        setImage("images/ppl2.png");
+        for(int i = 0; i < idle.length; i++)
+        {
+           idle[i] = new GreenfootImage("images/Player_run" + i + ".png"); 
+        }
+        setImage(idle[0]);
     }
     
     public void act()
