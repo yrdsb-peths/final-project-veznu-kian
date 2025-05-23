@@ -36,14 +36,20 @@ public class Ball extends Actor
     
     private void checkPlayerBounce()
     {
-        if()
+        if(isTouching(PersonOne.class))
         {
-            
+            bounce();
         }
-        else if() 
+        else if(isTouching(PersonTwo.class)) 
         {
-            
+            bounce();
         }
+        
+    }
+    
+    private void bounce()
+    {
+        
         
     }
     
