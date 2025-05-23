@@ -125,4 +125,13 @@ public class Ball extends Actor
 
     }    
         
+    private void checkGameOver()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        if(getX() <= 0 || getX() >= world.getWidth()-1)
+        {
+            world.gameOver(); 
+            
+        }
+    }
 }

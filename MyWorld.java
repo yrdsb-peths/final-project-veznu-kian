@@ -16,7 +16,7 @@ public class MyWorld extends World {
         addObject(personTwo, 550, 200);
     }
     
-    public void deflect()
+    public void gameOver()
     {
     
         
