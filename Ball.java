@@ -18,13 +18,32 @@ public class Ball extends Actor
     //Sound used to indicate game is finished 
     GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
     
-    private boolean motionDirection = true;
+    private boolean movingLeft = true;
     public Ball()
     {
         //set image
         setImage("images/ball.png");
+        setDirection();
     }
     
+    private void setDirection()
+    {
+        if(xSpeed == 0 )
+        {
+            xSpeed = 1;
+        }
+        
+        if(ySpeed == 0 )
+        {
+            ySpeed = 1;
+        }
+        
+        if(xSpeed > 0 )
+        {
+            movingLeft = false;
+        }
+        
+    }
     
     public void act()
     {
@@ -49,19 +68,26 @@ public class Ball extends Actor
     {
         if(isTouching(PersonOne.class))
         {
-            bounce();
+            xSpeed = xSpeed*-1;
         }
         else if(isTouching(PersonTwo.class)) 
         {
-            bounce();
+            xSpeed = xSpeed*-1;
         }
         
     }
     
     private void bounce()
     {
-        
-        
+        ySpeed = ySpeed*-1;
+        if(movingLeft == true)
+        {
+            xSpeed -= 1;
+        }
+        else 
+        {
+            xSpeed += 1; 
+        }
     }
     
     private void checkWallBounce()
@@ -70,13 +96,11 @@ public class Ball extends Actor
         
         if(getY() <= 0)
         {
-            ySpeed = ySpeed*-1;
-            xSpeed += 1;
+            bounce();
         }    
         else if (getY() >= world.getHeight()-1) 
         {
-            ySpeed = ySpeed*-1;
-            xSpeed += 1;
+            bounce();
         }    
         
         
