@@ -12,16 +12,18 @@ public class PersonOne extends Actor
      * Act - do whatever the BlockOne wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    String facing = "right";
     GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
     GreenfootImage[] idle = new GreenfootImage[6];
-    
+    SimpleTimer animationTimer = new SimpleTimer();
     public PersonOne(){
         for(int i = 0; i < idle.length; i++)
         {
            idle[i] = new GreenfootImage("images/Player_run/Run" + i + ".png"); 
         }
+        animationTimer.mark();
         setImage(idle[0]);
+        
     }
     
     public void act()
@@ -34,15 +36,20 @@ public class PersonOne extends Actor
             setLocation(getX(), getY()+10);
         }
         
-        collide();
+        animatePersonOne();
     }
-    
-    public void collide()
+    int imageIndex = 0;
+    public void animatePersonOne()
     {
-        
-        
-        
-        
-        
+        if(animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        if (facing.equals("right"))
+        {
+            setImage(idle[imageIndex]);
+            imageIndex = (imageIndex + 1) % idle.length;
+        }
     }    
 }

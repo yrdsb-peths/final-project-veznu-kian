@@ -8,13 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PersonTwo extends Actor
 {
-    /**
-     * Act - do whatever the BlockTwo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+    String facing = "left";
+    GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
+    GreenfootImage[] idle = new GreenfootImage[6];
+    SimpleTimer animationTimer = new SimpleTimer();
     public PersonTwo(){
-        setImage("images/ppl1.png");
+        for(int i = 0; i < idle.length; i++)
+        {
+           idle[i] = new GreenfootImage("images/Player_run/Run" + i + ".png"); 
+           idle[i].mirrorHorizontally();
+        }
+        animationTimer.mark();
+        setImage(idle[0]);
+        
     }
     
     public void act()
@@ -26,5 +32,21 @@ public class PersonTwo extends Actor
         {
             setLocation(getX(), getY()+10);
         }
+        
+        animatePersonTwo();
     }
+    int imageIndex = 0;
+    public void animatePersonTwo()
+    {
+        if(animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        if (facing.equals("left"))
+        {
+            setImage(idle[imageIndex]);
+            imageIndex = (imageIndex + 1) % idle.length;
+        }
+    }    
 }
