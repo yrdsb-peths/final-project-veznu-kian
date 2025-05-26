@@ -1,8 +1,8 @@
 import greenfoot.*;
 
 
-public class MyWorld extends World {
-    public MyWorld() {
+public class DoublePlayerWorld extends World {
+    public DoublePlayerWorld() {
         super(600, 400, 1);
         
         setBackground("images/background_soccer.jpg ");

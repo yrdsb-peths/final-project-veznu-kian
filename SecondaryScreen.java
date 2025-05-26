@@ -40,14 +40,14 @@ public class SecondaryScreen extends World
     {
         if(Greenfoot.isKeyDown("s"))
         {
-            MyWorld gameWorld = new MyWorld();
+            DoublePlayerWorld gameWorld = new DoublePlayerWorld();
             Greenfoot.setWorld(gameWorld);
          
         }  
         
         if(Greenfoot.isKeyDown("d"))
         {
-            MyWorld gameWorld = new MyWorld();
+            DoublePlayerWorld gameWorld = new DoublePlayerWorld();
             Greenfoot.setWorld(gameWorld);
          
         }  

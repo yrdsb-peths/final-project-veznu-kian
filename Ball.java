@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Ball extends Actor
 {
-    private int xSpeed = Greenfoot.getRandomNumber(8)-4;
-    private int ySpeed = Greenfoot.getRandomNumber(8)-4;
+    private int xSpeed = Greenfoot.getRandomNumber(6)-3;
+    private int ySpeed = Greenfoot.getRandomNumber(6)-3;
     private int direction = 0;
     
     //Variable to know if game finished 
@@ -92,7 +92,7 @@ public class Ball extends Actor
     
     private void checkWallBounce()
     {
-        MyWorld world =(MyWorld) getWorld();
+        DoublePlayerWorld world =(DoublePlayerWorld) getWorld();
         
         if(getY() <= 0)
         {
@@ -110,7 +110,7 @@ public class Ball extends Actor
     
     private void checkGameOver()
     {
-        MyWorld world = (MyWorld) getWorld();
+        DoublePlayerWorld world = (DoublePlayerWorld) getWorld();
         if(getX() <= 0 || getX() >= world.getWidth()-1 && !gameEnded)
         {
             world.gameOver(); 
