@@ -41,7 +41,7 @@ public class OptionScreen extends World
     {
         if(Greenfoot.isKeyDown("s"))
         {
-            DoublePlayerWorld gameWorld = new DoublePlayerWorld();
+            SinglePlayerWorld gameWorld = new SinglePlayerWorld();
             Greenfoot.setWorld(gameWorld);
          
         }  

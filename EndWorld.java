@@ -28,7 +28,7 @@ public class EndWorld extends World
         
         if(Greenfoot.isKeyDown("space"))
         {
-            DoublePlayerWorld gameWorld = new DoublePlayerWorld();
+            SinglePlayerWorld gameWorld = new SinglePlayerWorld();
             Greenfoot.setWorld(gameWorld);
          
         }  

@@ -1,13 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ball here.
+ * Write a description of class DoublePlayerBall here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-
-public class Ball extends Actor
+public class DoublePlayerBall extends Actor
 {
     //Initalizes a speed at the beggining of the game 
     //Starts with either the speed of -3 or 3
@@ -22,9 +21,9 @@ public class Ball extends Actor
     
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
-    private boolean movingUp = true;
+  
     
-    public Ball()
+    public DoublePlayerBall()
     {
 
         //Sets Image
@@ -125,7 +124,7 @@ public class Ball extends Actor
     private void checkWallBounce()
     {
         //Checks if ball touching top or bottom part of the world 
-        DoublePlayerWorld world =(DoublePlayerWorld) getWorld();
+        DoublePlayerWorld world = (DoublePlayerWorld)getWorld();
         
         if(getY() <= 0)
         {
@@ -155,4 +154,5 @@ public class Ball extends Actor
             
         }
     }
+
 }
