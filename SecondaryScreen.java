@@ -10,6 +10,7 @@ public class SecondaryScreen extends World
 {
     Label optionOne = new Label("Single Player",30);
     Label optionTwo = new Label("Double Player",30);
+    
     /**
      * Constructor for objects of class SecondaryScreen.
      * 

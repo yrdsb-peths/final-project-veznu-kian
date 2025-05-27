@@ -22,7 +22,7 @@ public class Ball extends Actor
     public Ball()
     {
         //set image
-        setImage("images/ball.png");
+        
         setDirection();
     }
     
