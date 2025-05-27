@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
 
-    Label titleLabel = new Label("Catch Ball",50);
+    Label titleLabel = new Label("Hit Ball",50);
     public TitleScreen()
     {    
         super(600, 400, 1); 
@@ -17,13 +17,15 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth()/2, getHeight()/2);
 
         prepare();
+        
+    
     }
 
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            SecondaryScreen optionScreen = new SecondaryScreen();
+            OptionScreen optionScreen = new OptionScreen();
             Greenfoot.setWorld(optionScreen);
 
         }    
@@ -39,6 +41,7 @@ public class TitleScreen extends World
         Label label = new Label("Press <space> To Continue", 30);
         addObject(label,298,238);
         label.setLocation(312,236);
+
         
     }
 }
