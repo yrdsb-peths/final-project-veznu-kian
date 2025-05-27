@@ -25,7 +25,7 @@ public class TitleScreen extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            SecondaryScreen optionScreen = new SecondaryScreen();
+            OptionScreen optionScreen = new OptionScreen();
             Greenfoot.setWorld(optionScreen);
 
         }    
