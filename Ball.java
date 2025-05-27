@@ -29,6 +29,7 @@ public class Ball extends Actor
 
         //Sets Image
         setImage("images/soccerBall.png");
+        
 
         //Sets Direction
         setDirection();
