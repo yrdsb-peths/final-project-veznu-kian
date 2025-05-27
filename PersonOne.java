@@ -31,12 +31,12 @@ public class PersonOne extends Actor
         if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY()-10);
+            animatePersonOne();
         } else if (Greenfoot.isKeyDown("s"))
         {
             setLocation(getX(), getY()+10);
+            animatePersonOne();
         }
-        
-        animatePersonOne();
     }
     int imageIndex = 0;
     public void animatePersonOne()

@@ -28,12 +28,13 @@ public class PersonTwo extends Actor
         if(Greenfoot.isKeyDown("up"))
         {
             setLocation(getX(), getY()-10);
+            animatePersonTwo();
         } else if (Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(), getY()+10);
+            animatePersonTwo();
         }
         
-        animatePersonTwo();
     }
     int imageIndex = 0;
     public void animatePersonTwo()
