@@ -10,9 +10,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ball extends Actor
 {
     //Initalizes a speed at the beggining of the game 
-    //Starts with either the speed of 1 or 2 
-    private int xSpeed = Greenfoot.getRandomNumber(2)-2;
-    private int ySpeed = Greenfoot.getRandomNumber(2)-2;
+    //Starts with either the speed of -3 or 3
+    private int xSpeed = Greenfoot.getRandomNumber(6)-3;
+    private int ySpeed = Greenfoot.getRandomNumber(6)-3;
         
     //Variable to know if game finished 
     private boolean gameEnded = false;
@@ -29,7 +29,6 @@ public class Ball extends Actor
 
         //Sets Image
         setImage("images/soccerBall.png");
-        
 
         //Sets Direction
         setDirection();
@@ -55,6 +54,11 @@ public class Ball extends Actor
         if(xSpeed > 0 )
         {
             movingLeft = false;
+        } 
+        else 
+        {   
+            movingLeft = false;
+            
         }
         
     }
@@ -62,14 +66,22 @@ public class Ball extends Actor
     public void act()
     {
         moveBall();
-        
-        setDirection();
-        moveBall();
         checkPlayerBounce();
         checkWallBounce();
         checkGameOver();
+        checkMaxSpeed();
         
         
+    }
+    
+    private void checkMaxSpeed()
+    {
+        int maxSpeed = 7;
+        
+        if(xSpeed > 9)
+        {
+            xSpeed = maxSpeed; 
+        }
         
     }
     
@@ -87,6 +99,7 @@ public class Ball extends Actor
         if(isTouching(PersonOne.class) || isTouching(PersonTwo.class))
         {
             xSpeed = xSpeed*-1;
+            movingLeft = xSpeed<0;
         }
         
     }
@@ -99,12 +112,14 @@ public class Ball extends Actor
         //Speeds up the ball once in contact with wall
         if(movingLeft == true)
         {
-            xSpeed += 2;
+            xSpeed -= 1;
         }
         else 
         {
-            xSpeed -= 2; 
+            xSpeed += 1; 
         }
+        
+        
     }
     
     private void checkWallBounce()
