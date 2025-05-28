@@ -2,6 +2,7 @@ import greenfoot.*;
 
 
 public class SinglePlayerWorld extends World {
+    
     public SinglePlayerWorld() {
         super(600, 400, 1);
         
