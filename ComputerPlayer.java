@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ComputerPlayer extends Actor
 {
-    /**
-     * Act - do whatever the BlockOne wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     String facing = "left";
     GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
     GreenfootImage[] idle = new GreenfootImage[6];
@@ -34,10 +31,8 @@ public class ComputerPlayer extends Actor
     public void act()
     {
         int ballY = gameBall.getY();
-        int randomDiffrence = Greenfoot.getRandomNumber(10)-5;
         
-        setLocation(getX(), ballY+randomDiffrence); 
-        
+        setLocation(getX(), ballY); 
         animatePersonOne();
     }
     
