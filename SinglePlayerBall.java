@@ -68,9 +68,9 @@ public class SinglePlayerBall extends Actor
         moveBall();
         checkPlayerBounce();
         checkWallBounce();
-        checkGameOver();
+        //checkGameOver();
         checkMaxSpeed();
-        
+        checkEdges();
         
     }
     
@@ -140,9 +140,26 @@ public class SinglePlayerBall extends Actor
         
     }
     
-   
+    private void checkEdges() {
+        if (getX() <= 0) {
+            // Player 2 scores
+            SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
+            world.addScoreToPlayer2();
+            resetBall();
+        } else if (getX() >= getWorld().getWidth() - 1) {
+            // Player 1 scores
+            SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
+            world.addScoreToPlayer1();
+            resetBall();
+        }
+    }
     
-    private void checkGameOver()
+    private void resetBall() {
+        setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
+        Greenfoot.delay(100);
+    }
+    
+    /*private void checkGameOver()
     {
         SinglePlayerWorld world = (SinglePlayerWorld) getWorld();
         
@@ -156,4 +173,5 @@ public class SinglePlayerBall extends Actor
             
         }
     }
+    */
 }

@@ -154,7 +154,8 @@ public class DoublePlayerBall extends Actor
     }
     
     private void resetBall() {
-    setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
+        setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
+        Greenfoot.delay(100);
     }
     
     /*private void checkGameOver()
