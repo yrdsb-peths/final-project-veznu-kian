@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DoublePlayerWorld extends World
 {
+    
+    private int player1Score = 0;
+    private int player2Score = 0;
+    
+    private Label player1Label;
+    private Label player2Label;
+    
     public DoublePlayerWorld() {
         super(600, 400, 1);
         
@@ -20,6 +27,24 @@ public class DoublePlayerWorld extends World
         
         PersonTwo personTwo = new PersonTwo();
         addObject(personTwo,550,200);
+        
+        // Initialize labels
+        player1Label = new Label("Player 1: 0", 30);
+        player2Label = new Label("Player 2: 0", 30);
+
+        // Add them to the world
+        addObject(player1Label, 150, 30);
+        addObject(player2Label, 450, 30);
+    }
+    
+    public void addScoreToPlayer1() {
+        player1Score++;
+        player1Label.setValue("Player 1: " + player1Score);
+    }
+    
+    public void addScoreToPlayer2() {
+        player2Score++;
+        player2Label.setValue("Player 2: " + player2Score);
     }
     
     public void gameOver()
