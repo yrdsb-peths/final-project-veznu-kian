@@ -67,9 +67,9 @@ public class DoublePlayerBall extends Actor
         moveBall();
         checkPlayerBounce();
         checkWallBounce();
-        //checkGameOver();
         checkMaxSpeed();
         checkEdges();
+        checkGameOver();
         
         
     }
@@ -158,12 +158,14 @@ public class DoublePlayerBall extends Actor
         Greenfoot.delay(100);
     }
     
-    /*private void checkGameOver()
+    private void checkGameOver()
     {
         DoublePlayerWorld world = (DoublePlayerWorld) getWorld();
         
+        int p1Score = world.player1Score;
+        int p2Score = world.player2Score;
         //Checks if ball is touching either side of the world 
-        if(getX() <= 0 || getX() >= world.getWidth()-1 && !gameEnded)
+        if(p1Score == 10 || p2Score == 10)
         {
             world.gameOver(); 
             gameOver.play();
@@ -172,6 +174,6 @@ public class DoublePlayerBall extends Actor
             
         }
     }
-    */
+    
 
 }
