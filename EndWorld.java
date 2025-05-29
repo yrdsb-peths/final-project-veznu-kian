@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndWorld extends World
 {
-    Label titleLabel = new Label("Press <Space> for next round",50);
+    Label titleLabel = new Label("Press <Space> To Restart Game",50);
     
     /**
      * Constructor for objects of class Endworld.

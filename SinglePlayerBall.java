@@ -60,7 +60,7 @@ public class SinglePlayerBall extends Actor
         } 
         else 
         {   
-            movingLeft = false;
+            movingLeft = true;
             
         }
         
@@ -74,6 +74,21 @@ public class SinglePlayerBall extends Actor
         checkMaxSpeed();
         checkEdges();
         checkGameOver();
+        updateDirection();
+        
+    }
+    
+    private void updateDirection()
+    {
+        if(xSpeed<0)
+        {
+            movingLeft = true;
+        }
+        else 
+        {
+            movingLeft = false;
+        }
+        
         
     }
     

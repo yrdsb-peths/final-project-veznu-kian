@@ -53,9 +53,9 @@ public class DoublePlayerBall extends Actor
             ySpeed = 1;
         }
         
-        if(xSpeed > 0 )
+        if(xSpeed < 0 )
         {
-            movingLeft = false;
+            movingLeft = true;
         } 
         else 
         {   
@@ -73,10 +73,23 @@ public class DoublePlayerBall extends Actor
         checkMaxSpeed();
         checkEdges();
         checkGameOver();
-        
+        updateDirection();
         
     }
     
+    private void updateDirection()
+    {
+        if(xSpeed<0)
+        {
+            movingLeft = true;
+        }
+        else 
+        {
+            movingLeft = false;
+        }
+        
+        
+    }
     private void checkMaxSpeed()
     {
         int maxSpeed = 7;
