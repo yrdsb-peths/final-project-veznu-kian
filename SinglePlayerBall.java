@@ -20,6 +20,9 @@ public class SinglePlayerBall extends Actor
     //Sound used to indicate game is finished 
     GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
     
+    //Sound used when ball is kicked 
+    GreenfootSound kickSound = new GreenfootSound("sounds/kickSound.mp3");
+    
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
   
@@ -100,7 +103,7 @@ public class SinglePlayerBall extends Actor
         isTouching(ComputerPlayer.class))
         {
             xSpeed = xSpeed*-1;
-            movingLeft = xSpeed<0;
+            kickSound.play();
         }
         
     }
