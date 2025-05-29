@@ -71,9 +71,9 @@ public class SinglePlayerBall extends Actor
         moveBall();
         checkPlayerBounce();
         checkWallBounce();
-        //checkGameOver();
         checkMaxSpeed();
         checkEdges();
+        checkGameOver();
         
     }
     
@@ -162,12 +162,14 @@ public class SinglePlayerBall extends Actor
         Greenfoot.delay(100);
     }
     
-    /*private void checkGameOver()
+    private void checkGameOver()
     {
         SinglePlayerWorld world = (SinglePlayerWorld) getWorld();
         
+        int p1Score = world.player1Score;
+        int p2Score = world.player2Score;
         //Checks if ball is touching either side of the world 
-        if(getX() <= 0 || getX() >= world.getWidth()-1 && !gameEnded)
+        if(p1Score == 10 || p2Score == 10)
         {
             world.gameOver(); 
             gameOver.play();
@@ -176,5 +178,4 @@ public class SinglePlayerBall extends Actor
             
         }
     }
-    */
 }
