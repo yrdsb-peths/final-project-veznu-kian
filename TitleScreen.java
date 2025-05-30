@@ -25,8 +25,8 @@ public class TitleScreen extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            OptionScreen optionScreen = new OptionScreen();
-            Greenfoot.setWorld(optionScreen);
+            InstructionScreen instructionScreen = new InstructionScreen();
+            Greenfoot.setWorld(instructionScreen);
 
         }    
 
