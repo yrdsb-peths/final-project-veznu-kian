@@ -30,10 +30,16 @@ public class ComputerPlayer extends Actor
     
     public void act()
     {
+        followBall();
+        animatePersonOne();
+    }
+    
+    public void followBall()
+    {
         int ballY = gameBall.getY();
         
-        setLocation(getX(), ballY); 
-        animatePersonOne();
+        setLocation(getX(), ballY);
+        
     }
     
     int imageIndex = 0;
