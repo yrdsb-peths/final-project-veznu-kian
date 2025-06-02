@@ -20,13 +20,15 @@ public class OptionScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        //set background
         setBackground("images/background_soccer.jpg ");
 
-        
+        //Add main titles for each mode
         addObject(optionOne, getWidth()/2, getHeight()/2-100);
         addObject(optionTwo, getWidth()/2, getHeight()/2+70);
         
-        
+        //Add instructional labels beneath each option 
         Label optionOne = new Label("Press <s> To Choose Single Player", 20);
         addObject(optionOne,getWidth()/2, getHeight()/2-70);
        
@@ -39,6 +41,7 @@ public class OptionScreen extends World
     
     public void act()
     {
+        // Start single player mode if 's' is pressed
         if(Greenfoot.isKeyDown("s"))
         {
             SinglePlayerWorld gameWorld = new SinglePlayerWorld();
@@ -46,6 +49,7 @@ public class OptionScreen extends World
          
         }  
         
+        //Start double player mode if 'd' is pressed
         if(Greenfoot.isKeyDown("d"))
         {
             DoublePlayerWorld gameWorld = new DoublePlayerWorld();
