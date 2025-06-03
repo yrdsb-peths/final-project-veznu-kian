@@ -19,7 +19,7 @@ public class ComputerPlayer extends Actor
     
     //Reference to game ball to track its position
     private SinglePlayerBall gameBall;
-    
+    public static int computerError = 0;
     public ComputerPlayer(SinglePlayerBall ball){
         //Load and mirror the idle animation images
         for(int i = 0; i < idle.length; i++)
@@ -46,8 +46,7 @@ public class ComputerPlayer extends Actor
     {
         //causes 'computer' to follow the vertical position of the ball
         int ballY = gameBall.getY();
-        setLocation(getX(), ballY);
-        
+        setLocation(getX(), ballY + computerError);
     }
     
     //index used to loop through animation frames

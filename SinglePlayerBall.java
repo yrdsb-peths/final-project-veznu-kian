@@ -119,6 +119,11 @@ public class SinglePlayerBall extends Actor
         {
             xSpeed = xSpeed*-1;
             kickSound.play();
+            
+            if(isTouching(ComputerPlayer.class))
+            {
+                ComputerPlayer.computerError--;
+            }
         }
         
     }
@@ -149,10 +154,13 @@ public class SinglePlayerBall extends Actor
         if(getY() <= 0)
         {
             bounce();
-        }    
+            ComputerPlayer.computerError+=10;
+        }
+            
         else if (getY() >= world.getHeight()-1) 
         {
             bounce();
+            ComputerPlayer.computerError+=10;
         }    
         
         
@@ -162,12 +170,14 @@ public class SinglePlayerBall extends Actor
         if (getX() <= 0) {
             // Player 2 scores
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
+            ComputerPlayer.computerError = 0;
             world.addScoreToPlayer2();
             resetBall();
         } else if (getX() >= getWorld().getWidth() - 1) {
             // Player 1 scores
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
             world.addScoreToPlayer1();
+            ComputerPlayer.computerError = 0;
             resetBall();
         }
     }
