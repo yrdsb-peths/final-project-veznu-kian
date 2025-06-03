@@ -37,7 +37,6 @@ public class ComputerPlayer extends Actor
     public void followBall()
     {
         int ballY = gameBall.getY();
-        
         setLocation(getX(), ballY);
         
     }

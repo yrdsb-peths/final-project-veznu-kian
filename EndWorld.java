@@ -28,8 +28,8 @@ public class EndWorld extends World
         
         if(Greenfoot.isKeyDown("space"))
         {
-            SinglePlayerWorld gameWorld = new SinglePlayerWorld();
-            Greenfoot.setWorld(gameWorld);
+            TitleScreen startingScreen = new TitleScreen();
+            Greenfoot.setWorld(startingScreen);
          
         }  
     }
