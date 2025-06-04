@@ -78,6 +78,7 @@ public class SinglePlayerBall extends Actor
         
     }
     
+
     private void updateDirection()
     {
         if(xSpeed<0)
@@ -173,6 +174,7 @@ public class SinglePlayerBall extends Actor
             ComputerPlayer.computerError = 0;
             world.addScoreToPlayer2();
             resetBall();
+          
         } else if (getX() >= getWorld().getWidth() - 1) {
             // Player 1 scores
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();

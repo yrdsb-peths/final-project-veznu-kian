@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class RandomPerk extends Actor
+public class Potion extends Actor
 {
-    public RandomPerk()
+    public Potion()
     {
-        setImage("images/randomBox.png");
+        setImage("images/potion.png");
     }
     
     public void act()

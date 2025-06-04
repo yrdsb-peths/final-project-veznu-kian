@@ -26,6 +26,16 @@ public class PersonOne extends Actor
         
     }
     
+    public void enlarge()
+    {
+        GreenfootImage image = getImage();
+        int newWidth = image.getWidth()*2;
+        int newHeight = image.getHeight()*2;
+        image.scale(newWidth,newHeight);
+        setImage(image);
+        
+    }
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("w"))
