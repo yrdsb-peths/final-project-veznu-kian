@@ -15,6 +15,12 @@ public class Potion extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        if(isTouching(SinglePlayerBall.class)) 
+        {
+            PersonOne player1 = (PersonOne) getWorld().getObjects(PersonOne.class).get(0);
+            player1.enlarge();
+            getWorld().removeObject(this);
+            
+        }
     }
 }

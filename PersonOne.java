@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class PersonOne extends Actor
 {
     /**
@@ -20,14 +21,20 @@ public class PersonOne extends Actor
     
     //Array to store animation frames for idle/running
     GreenfootImage[] idle = new GreenfootImage[6];
+    GreenfootImage[] originalIdle = new GreenfootImage[6];
     
     // Timer to control animation frame speed
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    private boolean isEnlarged = false;
+    
     public PersonOne(){
         for(int i = 0; i < idle.length; i++)
         {
             //Load each frame of the run animation
-           idle[i] = new GreenfootImage("images/Player_run/Run" + i + ".png"); 
+           GreenfootImage img = new GreenfootImage("images/Player_run/Run" + i + ".png");
+           originalIdle[i] = img;
+           idle[i] = img;
         }
         animationTimer.mark(); //reset timer
         setImage(idle[0]); // Set the first image initially
@@ -36,12 +43,28 @@ public class PersonOne extends Actor
     
     public void enlarge()
     {
-        GreenfootImage image = getImage();
-        int newWidth = image.getWidth()*2;
-        int newHeight = image.getHeight()*2;
-        image.scale(newWidth,newHeight);
-        setImage(image);
+        isEnlarged = true;
         
+        for (int i = 0; i < idle.length; i++) 
+        {
+            GreenfootImage img = new GreenfootImage(originalIdle[i]); // copy original
+            img.scale(img.getWidth() * 2, img.getHeight() * 2);
+            idle[i] = img;
+        }
+        
+        setImage(idle[imageIndex]);
+        
+    }
+    
+    public void shrink()
+    {
+        isEnlarged = false;
+        for(int i = 0; i < idle.length; i++)
+        {
+           idle[i] = originalIdle[i];
+           
+        }
+        setImage(idle[imageIndex]);
     }
     
     public void act()
