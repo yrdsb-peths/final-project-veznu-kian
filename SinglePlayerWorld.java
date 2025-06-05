@@ -21,8 +21,7 @@ public class SinglePlayerWorld extends World {
         ComputerPlayer computer = new ComputerPlayer(ball);
         addObject(computer,550,200);
         
-        RandomPerk random = new RandomPerk();
-        addObject(random,getWidth()/2,getHeight()/2);
+        
         // Initialize labels
         player1Label = new Label("Player 1: 0", 30);
         player2Label = new Label("Player 2: 0", 30);
@@ -36,13 +35,28 @@ public class SinglePlayerWorld extends World {
     public void addScoreToPlayer1() {
         player1Score++;
         player1Label.setValue("Player 1: " + player1Score);
+        addPotion();
     }
     
     public void addScoreToPlayer2() {
         player2Score++;
         player2Label.setValue("Player 2: " + player2Score);
+        addPotion();
     }
     
+    private void addPotion()
+    {
+        removeObjects(getObjects(Potion.class));
+        //40% chance
+        if(Greenfoot.getRandomNumber(10)>6)
+        {
+            int potionX = 300+Greenfoot.getRandomNumber(60)-40;
+            int potionY = 300+Greenfoot.getRandomNumber(80)-40;
+            Potion potion = new Potion();
+            addObject(potion,potionX,potionY);
+            
+        }
+    }
     public void gameOver()
     {
         EndWorld gameOver = new EndWorld();

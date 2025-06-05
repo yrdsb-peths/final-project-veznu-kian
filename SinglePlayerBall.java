@@ -78,6 +78,7 @@ public class SinglePlayerBall extends Actor
         
     }
     
+
     private void updateDirection()
     {
         if(xSpeed<0)
@@ -173,6 +174,7 @@ public class SinglePlayerBall extends Actor
             ComputerPlayer.computerError = 0;
             world.addScoreToPlayer2();
             resetBall();
+          
         } else if (getX() >= getWorld().getWidth() - 1) {
             // Player 1 scores
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
@@ -184,6 +186,11 @@ public class SinglePlayerBall extends Actor
     
     private void resetBall() {
         setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
+        
+        SinglePlayerWorld  world = (SinglePlayerWorld) getWorld();
+        PersonOne player1 = world.getObjects(PersonOne.class).get(0);
+        player1.shrink();
+        
         Greenfoot.delay(100);
     }
     
