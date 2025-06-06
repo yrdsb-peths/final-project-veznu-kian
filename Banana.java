@@ -14,7 +14,7 @@ public class Banana extends Actor
      */
     public Banana()
     {
-        setImage("images/banana");
+        setImage("images/banana.png");
     }
     
     public void act()
@@ -22,8 +22,18 @@ public class Banana extends Actor
         checkCollection();
     }
     
+    GreenfootSound collectEffect = new GreenfootSound("sounds/collectEffect.mp3");
     public void checkCollection()
     {
+        if(isTouching(SinglePlayerBall.class)) 
+        {
+            //Collect potion and enlarges the player 1
+            PersonOne player1 = (PersonOne) getWorld().getObjects(PersonOne.class).get(0);
+            player1.changeSpeed();
+            collectEffect.play();
+            getWorld().removeObject(this);
+            
+        }
         
     }
 }
