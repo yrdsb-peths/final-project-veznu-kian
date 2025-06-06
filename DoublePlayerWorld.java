@@ -25,6 +25,8 @@ public class DoublePlayerWorld extends World
         super(600, 400, 1);
         
         backgroundMusic.play();
+        backgroundMusic.setVolume(30);
+        
         setBackground("images/background_soccer.jpg "); // set the background image
         
         DoublePlayerScore board = new DoublePlayerScore();
@@ -55,6 +57,7 @@ public class DoublePlayerWorld extends World
         //Add's a point to player 1's score and updates the label
         player1Score++;
         player1Label.setValue(player1Score);
+        crowd.setVolume(30);
         crowd.play();
     }
     
@@ -62,6 +65,7 @@ public class DoublePlayerWorld extends World
         // adds a point to player 2's score and updates the label
         player2Score++;
         player2Label.setValue(player2Score);
+        crowd.setVolume(30);
         crowd.play();
     }
     
