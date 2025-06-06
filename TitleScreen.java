@@ -15,20 +15,25 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         // set background
-        setBackground("images/introductionBackground.png");
-        
-
-       
+        setBackground("images/introductionScreen.png");
+    
     
     }
 
     public void act()
     {
         //If space is pressed transition to the instruction screen
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("shift"))
         {
             InstructionScreen instructionScreen = new InstructionScreen();
             Greenfoot.setWorld(instructionScreen);
+
+        }    
+        
+        if(Greenfoot.isKeyDown("space"))
+        {
+            OptionScreen optionscreen = new OptionScreen();
+            Greenfoot.setWorld(optionscreen);
 
         }    
 

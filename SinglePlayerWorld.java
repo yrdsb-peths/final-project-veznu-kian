@@ -21,26 +21,29 @@ public class SinglePlayerWorld extends World {
         ComputerPlayer computer = new ComputerPlayer(ball);
         addObject(computer,550,200);
         
-        
+        SinglePlayerScore board = new SinglePlayerScore();
+        addObject(board,getWidth()/2,40);
+               
         // Initialize labels
-        player1Label = new Label("Player 1: 0", 30);
-        player2Label = new Label("Player 2: 0", 30);
+        player1Label = new Label("0", 20);
+        player2Label = new Label("0", 20);
+
 
         // Add them to the world
-        addObject(player1Label, 150, 30);
-        addObject(player2Label, 450, 30);
+        addObject(player1Label, getWidth()/2-30, 45);
+        addObject(player2Label, getWidth()/2+30, 45);
     }
     
     
     public void addScoreToPlayer1() {
         player1Score++;
-        player1Label.setValue("Player 1: " + player1Score);
+        player1Label.setValue(player1Score);
         addPotion();
     }
     
     public void addScoreToPlayer2() {
         player2Score++;
-        player2Label.setValue("Player 2: " + player2Score);
+        player2Label.setValue(player2Score);
         addPotion();
     }
     
@@ -57,6 +60,7 @@ public class SinglePlayerWorld extends World {
             
         }
     }
+    
     public void gameOver()
     {
         EndWorld gameOver = new EndWorld();

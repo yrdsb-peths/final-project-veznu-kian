@@ -19,10 +19,16 @@ public class DoublePlayerWorld extends World
     private Label player1Label;
     private Label player2Label;
     
+    GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
+    GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
     public DoublePlayerWorld() {
         super(600, 400, 1);
         
+        backgroundMusic.play();
         setBackground("images/background_soccer.jpg "); // set the background image
+        
+        DoublePlayerScore board = new DoublePlayerScore();
+        addObject(board,getWidth()/2,40);
         
         //Add the ball into the center of the field / world
         DoublePlayerBall ball = new DoublePlayerBall();
@@ -37,24 +43,26 @@ public class DoublePlayerWorld extends World
         addObject(personTwo,550,200);
         
         // Initialize labels
-        player1Label = new Label("Player 1: 0", 30);
-        player2Label = new Label("Player 2: 0", 30);
+        player1Label = new Label("0", 20);
+        player2Label = new Label("0", 20);
 
         // Add them to the world
-        addObject(player1Label, 150, 30);
-        addObject(player2Label, 450, 30);
+        addObject(player1Label, getWidth()/2-30, 45);
+        addObject(player2Label, getWidth()/2+30, 45);
     }
     
     public void addScoreToPlayer1() {
         //Add's a point to player 1's score and updates the label
         player1Score++;
-        player1Label.setValue("Player 1: " + player1Score);
+        player1Label.setValue(player1Score);
+        crowd.play();
     }
     
     public void addScoreToPlayer2() {
         // adds a point to player 2's score and updates the label
         player2Score++;
-        player2Label.setValue("Player 2: " + player2Score);
+        player2Label.setValue(player2Score);
+        crowd.play();
     }
     
     public void gameOver()

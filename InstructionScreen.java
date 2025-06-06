@@ -20,42 +20,18 @@ public class InstructionScreen extends World
         super(600, 400, 1); 
         
         // set the bakground image
-        setBackground("images/background_soccer.jpg ");
-        
-        // add the main title label at the top center
-        addObject(title, getWidth()/2, 50);
-        
-        //call method to set up the rest of the instruction labels
-        prepare();
+        setBackground("images/instructionScreen.png");
     }
     
     public void act()
     {
-        //Check if space is pressed
-        if(Greenfoot.isKeyDown("space"))
+        //Check if backspace is pressed
+        if(Greenfoot.isKeyDown("backspace"))
         {
-            //Transitions to the screen where the player can choose single player or double player
-            OptionScreen optionScreen = new OptionScreen();
-            Greenfoot.setWorld(optionScreen);
-
-        }    
+            TitleScreen titlescreen = new TitleScreen();
+            Greenfoot.setWorld(titlescreen);
+         
+        }  
     }
     
-    private void prepare()
-    {
-        // Labels for player controls and single player instructions
-        Label playerOne = new Label ("Player one: Use 'W' and 'S'", 30);
-        Label playerTwo = new Label ("Player two: Use '↑' and '↓'", 30);
-        Label single = new Label ("When single player is selected, you are assigned as player one", 25);
-        
-        //Position the instruction labels on the screen
-        addObject(single, getWidth()/2, 200);
-        addObject(playerOne, getWidth()/2, 150);
-        addObject(playerTwo, getWidth()/2, 250);
-        
-        // Label prompting the player to press space to continue
-        Label label = new Label("Press <space> To Continue", 30);
-        addObject(label,298,238);
-        label.setLocation(getWidth()/2 ,350);
-    }
 }

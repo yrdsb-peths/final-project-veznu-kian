@@ -17,11 +17,11 @@ public class DoublePlayerBall extends Actor
     private boolean gameEnded = false;
     
     //Sound used to indicate game is finished 
-    GreenfootSound gameOver = new GreenfootSound("sounds/gameOver.mp3");
-    
+    GreenfootSound gameOver = new GreenfootSound("sounds/game-over-deep-male-voice-clip-352695.mp3");
+    GreenfootSound roundOver = new GreenfootSound("sounds/gameOver.mp3");
     //Sound used when ball is kicked 
     GreenfootSound kickSound = new GreenfootSound("sounds/kickSound.mp3");
-    
+    GreenfootSound roundStart = new GreenfootSound("sounds/game-start-6104.mp3");
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
   
@@ -158,20 +158,25 @@ public class DoublePlayerBall extends Actor
     private void checkEdges() {
         if (getX() <= 0) {
             // Player 2 scores
+            roundOver.play();
             DoublePlayerWorld world = (DoublePlayerWorld)getWorld();
             world.addScoreToPlayer2();
             resetBall();
+            roundStart.play();
         } else if (getX() >= getWorld().getWidth() - 1) {
             // Player 1 scores
+            roundOver.play();
             DoublePlayerWorld world = (DoublePlayerWorld)getWorld();
             world.addScoreToPlayer1();
             resetBall();
+            roundStart.play();
         }
     }
     
     private void resetBall() {
         setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
-        Greenfoot.delay(100);
+        Greenfoot.delay(200);
+        
     }
     
     private void checkGameOver()
