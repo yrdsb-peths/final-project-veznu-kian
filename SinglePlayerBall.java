@@ -190,6 +190,7 @@ public class SinglePlayerBall extends Actor
         SinglePlayerWorld  world = (SinglePlayerWorld) getWorld();
         PersonOne player1 = world.getObjects(PersonOne.class).get(0);
         player1.shrink();
+        player1.resetSpeed();
         
         Greenfoot.delay(100);
     }

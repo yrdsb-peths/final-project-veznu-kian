@@ -27,7 +27,7 @@ public class PersonOne extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     
     private boolean isEnlarged = false;
-    
+    private int baseSpeed = 10;
     public PersonOne(){
         for(int i = 0; i < idle.length; i++)
         {
@@ -56,6 +56,16 @@ public class PersonOne extends Actor
         
     }
     
+    public void changeSpeed()
+    {
+        baseSpeed = baseSpeed + 10;
+    }
+    
+    public void resetSpeed()
+    {
+        baseSpeed=10;
+    }
+    
     public void shrink()
     {
         isEnlarged = false;
@@ -72,12 +82,12 @@ public class PersonOne extends Actor
         if(Greenfoot.isKeyDown("w"))
         {
             // Move up
-            setLocation(getX(), getY()-10);
+            setLocation(getX(), getY()-baseSpeed);
             animatePersonOne();
         } else if (Greenfoot.isKeyDown("s"))
         {
             //Move down
-            setLocation(getX(), getY()+10);
+            setLocation(getX(), getY()+baseSpeed);
             animatePersonOne();
         }
     }

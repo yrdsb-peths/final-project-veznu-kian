@@ -39,19 +39,23 @@ public class SinglePlayerWorld extends World {
         player1Score++;
         player1Label.setValue(player1Score);
         addPotion();
+        addBanana();
+        addStar();
     }
     
     public void addScoreToPlayer2() {
         player2Score++;
         player2Label.setValue(player2Score);
         addPotion();
+        addBanana();
+        addStar();
     }
     
     private void addPotion()
     {
         removeObjects(getObjects(Potion.class));
         //40% chance
-        if(Greenfoot.getRandomNumber(10)>6)
+        if(Greenfoot.getRandomNumber(10)==5)
         {
             int potionX = 300+Greenfoot.getRandomNumber(60)-40;
             int potionY = 300+Greenfoot.getRandomNumber(80)-40;
@@ -60,7 +64,35 @@ public class SinglePlayerWorld extends World {
             
         }
     }
+
+    public void addBanana()
+    {
+        removeObjects(getObjects(Banana.class));
+        //20% chance
+        if(Greenfoot.getRandomNumber(10)>0)
+        {
+            int bananaX = 300+Greenfoot.getRandomNumber(60)-40;
+            int bananaY = 300+Greenfoot.getRandomNumber(80)-40;
+            Banana banana = new Banana();
+            addObject(banana,bananaX,bananaY);
+            
+        }
+        
+    }
     
+    public void addStar()
+    {
+        removeObjects(getObjects(Star.class));
+        //20% chance
+        if(Greenfoot.getRandomNumber(10)>0)
+        {
+            int starX = 300+Greenfoot.getRandomNumber(60)-40;
+            int starY = 300+Greenfoot.getRandomNumber(80)-40;
+            Star star = new Star();
+            addObject(star,starX,starY);
+            
+        }
+    }
     public void gameOver()
     {
         EndWorld gameOver = new EndWorld();
