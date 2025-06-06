@@ -26,7 +26,6 @@ public class Star extends Actor
             
             
             collectEffect.play();
-            
             getWorld().removeObject(this);
             
         }
