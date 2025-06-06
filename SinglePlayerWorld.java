@@ -7,7 +7,7 @@ public class SinglePlayerWorld extends World {
     public int player2Score = 0;
     
     //Create labels for said variables
-    private Label player1Label;
+    public Label player1Label;
     private Label player2Label;
     
     public SinglePlayerWorld() {
