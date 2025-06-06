@@ -10,8 +10,14 @@ public class SinglePlayerWorld extends World {
     public Label player1Label;
     private Label player2Label;
     
+    GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
+    GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
+    
     public SinglePlayerWorld() {
         super(600, 400, 1);
+        
+        backgroundMusic.play();
+        backgroundMusic.setVolume(30);
         
         //Set background of game
         setBackground("images/background_soccer.jpg ");
@@ -50,6 +56,7 @@ public class SinglePlayerWorld extends World {
         addPotion();
         addBanana();
         addStar();
+        crowd.play();
     }
     
     public void addScoreToPlayer2() {
@@ -58,14 +65,15 @@ public class SinglePlayerWorld extends World {
         addPotion();
         addBanana();
         addStar();
+        crowd.play();
     }
     
     //Adds "perk" or potion into the world 
     private void addPotion()
     {
         removeObjects(getObjects(Potion.class));
-        //40% chance
-        if(Greenfoot.getRandomNumber(10)==5)
+        //20% chance
+        if(Greenfoot.getRandomNumber(10)<2)
         {
             int potionX = 300+Greenfoot.getRandomNumber(60)-40;
             int potionY = 300+Greenfoot.getRandomNumber(80)-40;
@@ -78,8 +86,8 @@ public class SinglePlayerWorld extends World {
     public void addBanana()
     {
         removeObjects(getObjects(Banana.class));
-        //20% chance
-        if(Greenfoot.getRandomNumber(10)>0)
+        //50% chance
+        if(Greenfoot.getRandomNumber(10)>5)
         {
             int bananaX = 300+Greenfoot.getRandomNumber(60)-40;
             int bananaY = 300+Greenfoot.getRandomNumber(80)-40;
@@ -93,8 +101,8 @@ public class SinglePlayerWorld extends World {
     public void addStar()
     {
         removeObjects(getObjects(Star.class));
-        //20% chance
-        if(Greenfoot.getRandomNumber(10)>0)
+        //10% chance
+        if(Greenfoot.getRandomNumber(10)==5)
         {
             int starX = 300+Greenfoot.getRandomNumber(60)-40;
             int starY = 300+Greenfoot.getRandomNumber(80)-40;
