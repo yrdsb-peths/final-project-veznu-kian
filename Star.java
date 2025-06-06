@@ -23,16 +23,32 @@ public class Star extends Actor
     {
         if(isTouching(SinglePlayerBall.class)) 
         {
+            
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
+            SinglePlayerBall ball = (SinglePlayerBall)getOneIntersectingObject(SinglePlayerBall.class);
+            PersonOne player = world.getObjects(PersonOne.class).get(0);
             
             world.player1Score++;
             world.player1Label.setValue(world.player1Score);
 
             collectEffect.play();
-            getWorld().removeObject(this);
+            world.removeObject(this);
             
-            SinglePlayerBall ball = (SinglePlayerBall)getOneIntersectingObject(SinglePlayerBall.class);
+        
+            ball.setLocation(world.getWidth()/2, world.getHeight()/2);
+
+                
+        
+            player.shrink();
+            player.resetSpeed();
+            Greenfoot.delay(100);
             
+
+
+            if (world.player1Score == 10 || world.player2Score == 10)
+            {
+                world.gameOver();
+            }
         }
     }
 }
