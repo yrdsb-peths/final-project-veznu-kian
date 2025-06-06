@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     // Creates label for the name of the game
-  
+    GreenfootSound arcademusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
+    GreenfootSound mouseClick = new GreenfootSound("sounds/mouse-click-290204.mp3");
     public TitleScreen()
     {    
         super(600, 400, 1); 
@@ -22,11 +23,14 @@ public class TitleScreen extends World
 
     public void act()
     {
+        arcademusic.play();
         //If space is pressed transition to the instruction screen
         if(Greenfoot.isKeyDown("shift"))
         {
             InstructionScreen instructionScreen = new InstructionScreen();
             Greenfoot.setWorld(instructionScreen);
+            arcademusic.stop();
+            mouseClick.play();
 
         }    
         
@@ -34,6 +38,8 @@ public class TitleScreen extends World
         {
             OptionScreen optionscreen = new OptionScreen();
             Greenfoot.setWorld(optionscreen);
+            arcademusic.stop();
+            mouseClick.play();
 
         }    
 

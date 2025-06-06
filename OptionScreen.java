@@ -10,7 +10,7 @@ public class OptionScreen extends World
 {
     Label optionOne = new Label("Single Player",30);
     Label optionTwo = new Label("Double Player",30);
-    
+    GreenfootSound arcademusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
     /**
      * Constructor for objects of class SecondaryScreen.
      * 
@@ -28,12 +28,14 @@ public class OptionScreen extends World
     
     public void act()
     {
+        arcademusic.play();
         
         // Start single player mode if 's' is pressed
         if(Greenfoot.isKeyDown("s"))
         {
             SinglePlayerWorld gameWorld = new SinglePlayerWorld();
             Greenfoot.setWorld(gameWorld);
+            arcademusic.stop();
          
         }  
         
@@ -42,13 +44,7 @@ public class OptionScreen extends World
         {
             DoublePlayerWorld gameWorld = new DoublePlayerWorld();
             Greenfoot.setWorld(gameWorld);
-         
-        }  
-        
-        if(Greenfoot.isKeyDown("s"))
-        {
-            SinglePlayerWorld gameWorld = new SinglePlayerWorld();
-            Greenfoot.setWorld(gameWorld);
+            arcademusic.stop();
          
         }  
         
@@ -57,6 +53,7 @@ public class OptionScreen extends World
         {
             TitleScreen titlescreen = new TitleScreen();
             Greenfoot.setWorld(titlescreen);
+            arcademusic.stop();
          
         }  
     

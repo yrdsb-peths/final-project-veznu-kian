@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionScreen extends World
 {
-    // Title label for the instruction screen.
-    Label title = new Label ("Instructions", 50);
+    
+    GreenfootSound arcademusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
     /**
      * Constructor for objects of class InstructionScreen.
      * 
@@ -25,11 +25,13 @@ public class InstructionScreen extends World
     
     public void act()
     {
+        arcademusic.play();
         //Check if backspace is pressed
         if(Greenfoot.isKeyDown("backspace"))
         {
             TitleScreen titlescreen = new TitleScreen();
             Greenfoot.setWorld(titlescreen);
+            arcademusic.stop();
          
         }  
     }
