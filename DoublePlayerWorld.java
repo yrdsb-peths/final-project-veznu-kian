@@ -24,6 +24,7 @@ public class DoublePlayerWorld extends World
     public DoublePlayerWorld() {
         super(600, 400, 1);
         
+        //Plays background music
         backgroundMusic.play();
         backgroundMusic.setVolume(30);
         

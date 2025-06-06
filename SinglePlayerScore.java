@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SinglePlayerScore extends Actor
 {
+    //Set image for CPU scoreboard
     public SinglePlayerScore()
     {
         setImage("images/scoreBoardCPU.png");

@@ -26,6 +26,7 @@ public class PersonOne extends Actor
     // Timer to control animation frame speed
     SimpleTimer animationTimer = new SimpleTimer();
     
+    //Timer
     private boolean isEnlarged = false;
     
     public PersonOne(){
@@ -41,21 +42,25 @@ public class PersonOne extends Actor
         
     }
     
+    //Enlarges image
     public void enlarge()
     {
         isEnlarged = true;
         
         for (int i = 0; i < idle.length; i++) 
         {
+            // change the height 
             GreenfootImage img = new GreenfootImage(originalIdle[i]); // copy original
             img.scale(img.getWidth() * 2, img.getHeight() * 2);
             idle[i] = img;
         }
         
+        //Set image
         setImage(idle[imageIndex]);
         
     }
     
+    //Shrinks image
     public void shrink()
     {
         isEnlarged = false;

@@ -18,7 +18,7 @@ public class EndWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        // Set the background color to black and fill the screen
+        // Set the background color to the game over screen
         setBackground("images/endBackground.png");
         
         
