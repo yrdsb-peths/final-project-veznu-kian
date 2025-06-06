@@ -33,7 +33,7 @@ public class TitleScreen extends World
             mouseClick.play();
 
         }    
-        
+        // If space is pressed transition to the option screen
         if(Greenfoot.isKeyDown("space"))
         {
             OptionScreen optionscreen = new OptionScreen();

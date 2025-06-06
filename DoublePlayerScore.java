@@ -10,6 +10,7 @@ public class DoublePlayerScore extends Actor
 {
     public DoublePlayerScore()
     {
+        // Add scoreboard image for double player scores.
         setImage("images/scoreBoard.png");
     }
     

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class OptionScreen extends World
 {
+    //Labels for each option (single player or double player)
     Label optionOne = new Label("Single Player",30);
     Label optionTwo = new Label("Double Player",30);
     GreenfootSound arcademusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
@@ -21,6 +22,7 @@ public class OptionScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
+        //Set the background of the option screen
         setBackground("images/optionScreen.png");
     
         

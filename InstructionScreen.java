@@ -25,6 +25,7 @@ public class InstructionScreen extends World
     
     public void act()
     {
+        //Play arcade style music
         arcademusic.play();
         //Check if backspace is pressed
         if(Greenfoot.isKeyDown("backspace"))
