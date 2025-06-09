@@ -77,6 +77,7 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    //updates the direction of the ball
     private void updateDirection()
     {
         if(xSpeed<0)

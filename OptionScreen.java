@@ -50,7 +50,7 @@ public class OptionScreen extends World
          
         }  
         
-    
+        // If backspace is pressed then go to title screen
         if(Greenfoot.isKeyDown("backspace"))
         {
             TitleScreen titlescreen = new TitleScreen();

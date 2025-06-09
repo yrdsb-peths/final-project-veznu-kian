@@ -14,17 +14,21 @@ public class Banana extends Actor
      */
     public Banana()
     {
+        //Set image of the actor
         setImage("images/banana.png");
     }
     
     public void act()
     {
+        // calling method
         checkCollection();
     }
     
+    //Collect soundeffect
     GreenfootSound collectEffect = new GreenfootSound("sounds/collectEffect.mp3");
     public void checkCollection()
     {
+        //If the actor is touching the ball 
         if(isTouching(SinglePlayerBall.class)) 
         {
             //Collect potion and enlarges the player 1

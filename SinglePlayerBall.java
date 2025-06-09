@@ -78,7 +78,7 @@ public class SinglePlayerBall extends Actor
         
     }
     
-
+    //Update the direction of the ball
     private void updateDirection()
     {
         if(xSpeed<0)

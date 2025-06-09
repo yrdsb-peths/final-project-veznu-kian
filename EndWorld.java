@@ -32,7 +32,7 @@ public class EndWorld extends World
             OptionScreen options = new OptionScreen();
             Greenfoot.setWorld(options);
         }
-        
+        //Check if delete key is pressed
         if(Greenfoot.isKeyDown("delete"))
         {
 
