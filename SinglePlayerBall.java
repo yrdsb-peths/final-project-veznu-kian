@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ball here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents the ball in the single-player pong game.
+ * Handles movement, bouncing, scoring, and game-over methods
  */
 
 public class SinglePlayerBall extends Actor
@@ -26,7 +24,9 @@ public class SinglePlayerBall extends Actor
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
   
-    
+     /**
+     * Constructor to set the ball image and initial direction.
+     */
     public SinglePlayerBall()
     {
 
@@ -78,7 +78,9 @@ public class SinglePlayerBall extends Actor
         
     }
     
-
+    /**
+     * Updates movingLeft flag based on current xSpeed.
+     */
     private void updateDirection()
     {
         if(xSpeed<0)
@@ -93,6 +95,9 @@ public class SinglePlayerBall extends Actor
         
     }
     
+    /**
+     * Limits maximum horizontal speed to 7.
+     */
     private void checkMaxSpeed()
     {
         int maxSpeed = 7;
@@ -104,6 +109,9 @@ public class SinglePlayerBall extends Actor
         
     }
     
+    /**
+     * Moves the ball based on its current speed.
+     */
     private void moveBall()
     {
         //Moves the Ball according to direction and speed
@@ -111,6 +119,11 @@ public class SinglePlayerBall extends Actor
         
     }
     
+    /**
+     * Reverses horizontal direction and plays sound
+     * when ball touches player characters.
+     * Decrease computer error when hitting computer player.
+     */
     private void checkPlayerBounce()
     {
         //If Ball touches Player : horizontal speed turns negative 
@@ -129,6 +142,10 @@ public class SinglePlayerBall extends Actor
         
     }
     
+    /**
+     * Reverses vertical direction and slightly speeds up horizontal speed
+     * when the ball bounces off the top or bottom wall.
+     */
     private void bounce()
     {
         //Changes direction of ball : opposite direction 
@@ -147,6 +164,10 @@ public class SinglePlayerBall extends Actor
         
     }
     
+    /**
+     * Checks for collision with top or bottom of world, and bounces while.
+     * increasing computer error when bouncing on walls.
+     */
     private void checkWallBounce()
     {
         //Checks if ball touching top or bottom part of the world 
@@ -167,6 +188,10 @@ public class SinglePlayerBall extends Actor
         
     }
     
+     /**
+     * Checks if ball has reached left or right edges,
+     * updates scores and resets the ball.
+     */
     private void checkEdges() {
         if (getX() <= 0) {
             // Player 2 scores

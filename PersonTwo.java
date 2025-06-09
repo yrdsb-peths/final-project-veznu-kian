@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Blocks used for pong
- * 
- * @author (Kian) 
- * @version (May 20th 2025)
+ * Represents Player Two in the game.
+ * Handles vertical movement and animation.
+ * Player moves up and down with the arrow keys.
+ * The player faces left, so animation frames are mirrored.
  */
 public class PersonTwo extends Actor
 {
@@ -19,6 +19,14 @@ public class PersonTwo extends Actor
     
     // Timer to control animation frame speed
     SimpleTimer animationTimer = new SimpleTimer();
+
+    //Keeps track of which animation frame is showing
+    int imageIndex = 0;
+    
+    /**
+     * Constructor for PersonTwo.
+     * Loads and mirrors animation frames, sets initial image and timer.
+     */
     public PersonTwo(){
         
         for(int i = 0; i < idle.length; i++)
@@ -32,7 +40,18 @@ public class PersonTwo extends Actor
         
     }
     
+
     public void act()
+    {
+        movePlayer();
+        
+    }
+    
+    /**
+     * Moves player up or down based on arrow key inputs.
+     * Animates player while moving.
+     */
+    public void movePlayer()
     {
         if(Greenfoot.isKeyDown("up"))
         {
@@ -47,8 +66,10 @@ public class PersonTwo extends Actor
         }
         
     }
-    //Keeps track of which animation frame is showing
-    int imageIndex = 0;
+    
+    /**
+     * Animates the player by cycling through mirrored frames every 200 milliseconds.
+     */
     public void animatePersonTwo()
     {
         if(animationTimer.millisElapsed() < 200)

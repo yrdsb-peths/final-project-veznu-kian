@@ -1,13 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scoreboard here.
+ * Represents the scoreboard for the double player mode.
+ * Displays the scoreboard image on the screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class DoublePlayerScore extends Actor
 {
+    /**
+     * Constructor for DoublePlayerScore.
+     * Sets the scoreboard image.
+     */
     public DoublePlayerScore()
     {
         // Add scoreboard image for double player scores.
