@@ -1,4 +1,16 @@
-# Set up Greenfoot for VSCode
+# Game summary
+This is a soccer-themed Pong-style game created in Greenfoot. Players control paddle-like goalies, aiming to score goals by getting the ball past their opponent. The game can be played in singleplayer or multiplayer mode.
+
+In singleplayer mode, random power-up perks appear to enhance gameplay:
+
+    Potion: Enlarges the player's paddle (goalie).
+
+    Banana: Increases the player's movement speed.
+
+    Star: Instantly gives the player 1 point.
+
+The first player to score 10 goals wins the game.
+
 
 [Mac]
 1. Open `Finder` and navigate to the Applications folder.
