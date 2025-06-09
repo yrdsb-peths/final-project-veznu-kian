@@ -78,9 +78,12 @@ public class SinglePlayerBall extends Actor
         
     }
     
+
     /**
      * Updates movingLeft flag based on current xSpeed.
      */
+
+    //Update the direction of the ball
     private void updateDirection()
     {
         if(xSpeed<0)

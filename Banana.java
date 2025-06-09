@@ -18,6 +18,7 @@ public class Banana extends Actor
      */
     public Banana()
     {
+        //Set image of the actor
         setImage("images/banana.png");
     }
     
@@ -26,9 +27,11 @@ public class Banana extends Actor
      */
     public void act()
     {
+        // calling method
         checkCollection();
     }
     
+
     /**
      * Checks if the banana is touching the game ball.
      * If so, it increases Player One's speed, plays the collection sound,
@@ -36,6 +39,7 @@ public class Banana extends Actor
      */
     public void checkCollection()
     {
+        //If the actor is touching the ball 
         if(isTouching(SinglePlayerBall.class)) 
         {
             //Access the first PlayerOne object

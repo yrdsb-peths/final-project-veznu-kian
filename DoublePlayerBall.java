@@ -85,10 +85,12 @@ public class DoublePlayerBall extends Actor
         updateDirection();
         
     }
+
      
     /**
      * Updates the movingLeft variable based on current horizontal speed.
      */
+
     private void updateDirection()
     {
         if(xSpeed<0)

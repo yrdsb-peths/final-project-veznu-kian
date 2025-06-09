@@ -16,11 +16,13 @@ public class Star extends Actor
 
     public Star()
     {
+        //set image of actor
         setImage("images/bonuspoint.png");
     }
     
     public void act()
     {
+        // if touching the ball
         if(isTouching(SinglePlayerBall.class)) 
         {
             
@@ -28,23 +30,27 @@ public class Star extends Actor
             SinglePlayerBall ball = (SinglePlayerBall)getOneIntersectingObject(SinglePlayerBall.class);
             PersonOne player = world.getObjects(PersonOne.class).get(0);
             
+            //Add score to player 1
             world.player1Score++;
             world.player1Label.setValue(world.player1Score);
-
+            
+            //Play sound effect
             collectEffect.play();
+            
+            //remove this actor
             world.removeObject(this);
             
-        
+            //Set ball location to the middle
             ball.setLocation(world.getWidth()/2, world.getHeight()/2);
 
                 
-        
+            //Shrink the player, reset the speed, delay 100 miliseconds
             player.shrink();
             player.resetSpeed();
             Greenfoot.delay(100);
             
 
-
+            //If player one OR player two reaches the score of 10 then end the game.
             if (world.player1Score == 10 || world.player2Score == 10)
             {
                 world.gameOver();
