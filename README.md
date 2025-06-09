@@ -30,15 +30,10 @@ The first player to score 10 goals wins the game.
 3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
 4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
 
-[Windows]
-1. Open `File Explorer` and navigate to `C:\Program Files\Greenfoot` and locate the `greenfoot.jar` file.
-2. Copy this `greenfoot.jar` to the `\lib` Folder in this project.
 
-<br>
-<br>
+# Tips
 
-# project.greenfoot
-Copy the `project.greenfoot.md` file and rename it to `project.greenfoot`
+[SinglePlayer]
+1. When the ball hits the top or bottom wall of the world, the speed is increased by a certain amount and the error possibility within the computer player goes up. However, if the computer is able to hit the ball back that error possibility will go down as well. 
 
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+
