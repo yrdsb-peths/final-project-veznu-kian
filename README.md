@@ -12,6 +12,18 @@ In singleplayer mode, random power-up perks appear to enhance gameplay:
 The first player to score 10 goals wins the game.
 
 
+# Get started
+
+[Windows]
+1. Clone this repository to your device
+2. Open File explorer
+3. Open notepad and save as project.greenfoot in the repository file
+4. Open the game 
+5. Instantiate the world named "TitleScreen"
+    Right click the world "titlescreen" 
+    Click on "New titlescreen()"
+    Enjoy!
+
 [Mac]
 1. Open `Finder` and navigate to the Applications folder.
 2. Right-click on the Greenfoot app and select `Show Package Contents`.
