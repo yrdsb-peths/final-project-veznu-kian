@@ -10,14 +10,14 @@ public class SinglePlayerWorld extends World {
     public Label player1Label;
     private Label player2Label;
     
+    // Added crowd sounds to the game world.
     GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
-    GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
+    
+    // Background Music for Game 
+    GreenfootSound arcadeMusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
     
     public SinglePlayerWorld() {
         super(600, 400, 1);
-        
-        backgroundMusic.play();
-        backgroundMusic.setVolume(30);
         
         //Set background of game
         setBackground("images/background_soccer.jpg ");
@@ -47,7 +47,14 @@ public class SinglePlayerWorld extends World {
         addObject(player1Label, getWidth()/2-30, 45);
         addObject(player2Label, getWidth()/2+30, 45);
     }
-    
+     
+    public void act()
+    {
+        //Plays background music
+        arcadeMusic.play();
+        arcadeMusic.setVolume(40);
+        
+    }
     
     //methods to adding score to each variable
     public void addScoreToPlayer1() {

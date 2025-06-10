@@ -22,15 +22,15 @@ public class DoublePlayerWorld extends World
     // Added crowd sounds to the game world.
     GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
     
-    //Added background music to the game world.
-    GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
-
+    // Background Music for Game 
+    GreenfootSound arcadeMusic = new GreenfootSound("sounds/retro-game-arcade-236133.mp3");
+    
     public DoublePlayerWorld() {
         super(600, 400, 1);
         
         //Plays background music
-        backgroundMusic.play();
-        backgroundMusic.setVolume(30);
+        arcadeMusic.play();
+        arcadeMusic.setVolume(50);
         
         setBackground("images/background_soccer.jpg "); // set the background image
         
@@ -56,6 +56,14 @@ public class DoublePlayerWorld extends World
         // Add them to the world
         addObject(player1Label, getWidth()/2-30, 45);
         addObject(player2Label, getWidth()/2+30, 45);
+    }
+    
+    public void act()
+    {
+        //Plays background music
+        arcadeMusic.play();
+        arcadeMusic.setVolume(40);
+    
     }
     
     /*
