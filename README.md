@@ -24,11 +24,6 @@ The first player to score 10 goals wins the game.
     Click on "New titlescreen()"
     Enjoy!
 
-[Mac]
-1. Open `Finder` and navigate to the Applications folder.
-2. Right-click on the Greenfoot app and select `Show Package Contents`.
-3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
-4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
 
 
 # Tips
