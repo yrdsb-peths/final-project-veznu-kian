@@ -21,6 +21,12 @@ public class SinglePlayerBall extends Actor
     //Sound used when ball is kicked 
     GreenfootSound kickSound = new GreenfootSound("sounds/kickSound.mp3");
     
+    //Sound used to indicate round is over 
+    GreenfootSound roundOver = new GreenfootSound("sounds/gameOver.mp3");
+    
+    //Sound used when round starts 
+    GreenfootSound roundStart = new GreenfootSound("sounds/game-start-6104.mp3");
+    
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
   
@@ -197,18 +203,21 @@ public class SinglePlayerBall extends Actor
      */
     private void checkEdges() {
         if (getX() <= 0) {
-            // Player 2 scores
+            // Computer scores
+            roundOver.play();
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
             ComputerPlayer.computerError = 0;
             world.addScoreToPlayer2();
             resetBall();
-          
+            roundStart.play();
         } else if (getX() >= getWorld().getWidth() - 1) {
             // Player 1 scores
+            roundOver.play();
             SinglePlayerWorld world = (SinglePlayerWorld)getWorld();
             world.addScoreToPlayer1();
             ComputerPlayer.computerError = 0;
             resetBall();
+            roundStart.play();
         }
     }
     
