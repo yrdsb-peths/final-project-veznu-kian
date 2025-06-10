@@ -1,18 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class singlePlayerScoreBoard here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents the CPU's scoreboard in the single-player pong game.
  */
 public class SinglePlayerScore extends Actor
 {
-    //Set image for CPU scoreboard
+    /**
+     * Constructs the scoreboard and sets its image.
+     */
     public SinglePlayerScore()
     {
         setImage("images/scoreBoardCPU.png");
     }
+    
     public void act()
     {
         // Add your action code here.

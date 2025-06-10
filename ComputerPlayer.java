@@ -9,6 +9,7 @@ public class ComputerPlayer extends Actor
 {
     //Direction the character is facing
     String facing = "left";
+    
     //default image when not animating
     GreenfootImage run = new GreenfootImage("images/Player_run/Run0.png");
     //array to hold the idle animation frames

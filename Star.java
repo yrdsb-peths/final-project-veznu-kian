@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Star here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents a collectible item which is a :star in the single-player game 
+ * mode. When touched by the ball, it increases the player's score,plays a 
+ * sound effect, resets ball and player states
  */
 public class Star extends Actor
 {
-    /**
-     * Act - do whatever the Star wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Sound effect played when star is collected
     GreenfootSound collectEffect = new GreenfootSound("sounds/collectEffect.mp3");
 
+    /**
+     * Constructs a Star object and sets its image.
+     */
     public Star()
     {
         //set image of actor
@@ -22,7 +21,7 @@ public class Star extends Actor
     
     public void act()
     {
-        // if touching the ball
+        // Check if touching the ball
         if(isTouching(SinglePlayerBall.class)) 
         {
             
@@ -37,10 +36,10 @@ public class Star extends Actor
             //Play sound effect
             collectEffect.play();
             
-            //remove this actor
+            //Remove the star from world
             world.removeObject(this);
             
-            //Set ball location to the middle
+            //Set ball location to the center
             ball.setLocation(world.getWidth()/2, world.getHeight()/2);
 
                 
@@ -50,7 +49,8 @@ public class Star extends Actor
             Greenfoot.delay(100);
             
 
-            //If player one OR player two reaches the score of 10 then end the game.
+            //If player one OR player two reaches the score of 10 then end 
+            //the game.
             if (world.player1Score == 10 || world.player2Score == 10)
             {
                 world.gameOver();

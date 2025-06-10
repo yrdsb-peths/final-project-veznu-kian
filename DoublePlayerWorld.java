@@ -15,12 +15,16 @@ public class DoublePlayerWorld extends World
     //Player two score counter
     public int player2Score = 0;
     
-    //labels to display the scores
+    //Labels to display the scores
     private Label player1Label;
     private Label player2Label;
     
+    // Added crowd sounds to the game world.
     GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
+    
+    //Added background music to the game world.
     GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
+    
     public DoublePlayerWorld() {
         super(600, 400, 1);
         

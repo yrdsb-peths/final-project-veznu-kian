@@ -212,6 +212,11 @@ public class SinglePlayerBall extends Actor
         }
     }
     
+    /**
+     * Resets the ball to the center of the game world.
+     * Also shrinks and resets speed of the player one character,
+     * then delays to give players a moment before continuing to play.
+     */
     private void resetBall() {
         setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
         
@@ -223,6 +228,11 @@ public class SinglePlayerBall extends Actor
         Greenfoot.delay(100);
     }
     
+    /**
+     * Checks if the game has ended by seeing if either player has reached
+     * the winning score. If the game is over, it will change the world
+     * and plays the game over sound.
+     */
     private void checkGameOver()
     {
         SinglePlayerWorld world = (SinglePlayerWorld) getWorld();
