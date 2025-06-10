@@ -23,6 +23,11 @@ public class InstructionScreen extends World
         setBackground("images/instructionScreen.png");
     }
     
+    /*
+     * This method when called, plays an arcade style soundtrack and checks if the 
+     * backspace key is pressed. When the key is pressed it will stop the music and then
+     * transition back to the titlescreen
+     */
     public void act()
     {
         //Play arcade style music
