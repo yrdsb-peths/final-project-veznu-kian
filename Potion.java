@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RandomPerk here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents a potion perk in the single-player world.
+ * When collected by the ball, it enlarges Player One and plays a sound.
  */
-// Only for singleplayer world
 public class Potion extends Actor
 {
+    // Sound effect played when the potion is collected
     GreenfootSound collectEffect = new GreenfootSound("sounds/collectEffect.mp3");
+    
+    /**
+     * Constructor for Potion.
+     * Sets the potion image.
+     */
     public Potion()
     {
         //Set image for the potion
@@ -17,6 +20,14 @@ public class Potion extends Actor
     }
     
     public void act()
+    {
+        checkCollection();
+    }
+    
+    /**
+     * If touching SinglePlayerBall, enlarges Player One and removes potion.
+     */
+    public void checkCollection()
     {
         if(isTouching(SinglePlayerBall.class)) 
         {

@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ComputerPlayer here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents the computer player that follows the ball vetically.
+ * The player moves along the y axis, tracking the ball position with 
+ * little error margin to be beatable by the player 
  */
 public class ComputerPlayer extends Actor
 {
@@ -19,7 +18,17 @@ public class ComputerPlayer extends Actor
     
     //Reference to game ball to track its position
     private SinglePlayerBall gameBall;
+    
+    //Static variable to increase error in computer player's tracking
     public static int computerError = 0;
+    
+    //index used to loop through animation frames
+    int imageIndex = 0;
+    
+     /**
+     * Constructor for ComputerPlayer.
+     * Controls animation, saves image and stores a reference to the ball.
+     */
     public ComputerPlayer(SinglePlayerBall ball){
         //Load and mirror the idle animation images
         for(int i = 0; i < idle.length; i++)
@@ -27,14 +36,19 @@ public class ComputerPlayer extends Actor
            idle[i] = new GreenfootImage("images/Player_run/Run" + i + ".png"); 
            idle[i].mirrorHorizontally();
         }
+        
         //Start the animation timer and set the initial image
         animationTimer.mark();
         setImage(idle[0]);
+        
         // Store the reference to the ball to follow its movement
         gameBall = ball;
         
     }
     
+    /**
+     * Moves the player to follow the ball vertically and animates the player.
+     */
     public void act()
     {
         // moves the ai player and animates its movement
@@ -42,6 +56,10 @@ public class ComputerPlayer extends Actor
         animatePersonOne();
     }
     
+    /**
+     * Moves the computer player vertically to follow the ball's Y position,
+     * while having increasing chances for error
+     */
     public void followBall()
     {
         //causes 'computer' to follow the vertical position of the ball
@@ -49,8 +67,10 @@ public class ComputerPlayer extends Actor
         setLocation(getX(), ballY + computerError);
     }
     
-    //index used to loop through animation frames
-    int imageIndex = 0;
+    /**
+     * Animates the player by cycling through images of it facing left.
+     * The animation updates only once every 200 milliseconds.
+     */
     public void animatePersonOne()
     {
         // Only update the fram if at least 200 milliseconds have passed
@@ -58,7 +78,10 @@ public class ComputerPlayer extends Actor
         {
             return;
         }
+        
+        //Resets Timer
         animationTimer.mark();
+        
         //Cycle through the irrored running frames
         if (facing.equals("left"))
         {

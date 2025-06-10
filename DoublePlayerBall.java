@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DoublePlayerBall here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+  * Represents the ball used in the Double Player game mode.
+  * 
+  * The ball moves across the screen, bouncing off players and walls.
+  * It tracks scoring and checks if game is finished 
+  */
 public class DoublePlayerBall extends Actor
 {
     //Initalizes a speed at the beggining of the game 
@@ -18,14 +18,23 @@ public class DoublePlayerBall extends Actor
     
     //Sound used to indicate game is finished 
     GreenfootSound gameOver = new GreenfootSound("sounds/game-over-deep-male-voice-clip-352695.mp3");
+    
+    //Sound used to indicate round is over 
     GreenfootSound roundOver = new GreenfootSound("sounds/gameOver.mp3");
+    
     //Sound used when ball is kicked 
     GreenfootSound kickSound = new GreenfootSound("sounds/kickSound.mp3");
+    
+    //Sound used when round starts 
     GreenfootSound roundStart = new GreenfootSound("sounds/game-start-6104.mp3");
+    
     //Variable that remembers the direction ball is heading toward 
     private boolean movingLeft = true;
   
-    
+    /**
+     * Constructor for the DoublePlayerBall.
+     * Sets initial image and direction.
+     */
     public DoublePlayerBall()
     {
 
@@ -76,8 +85,12 @@ public class DoublePlayerBall extends Actor
         updateDirection();
         
     }
-    
-    //updates the direction of the ball
+
+     
+    /**
+     * Updates the movingLeft variable based on current horizontal speed.
+     */
+
     private void updateDirection()
     {
         if(xSpeed<0)
@@ -91,6 +104,10 @@ public class DoublePlayerBall extends Actor
         
         
     }
+    
+    /**
+     * Limits the horizontal speed to a maximum value to prevent the ball from going too fast.
+     */
     private void checkMaxSpeed()
     {
         int maxSpeed = 7;
@@ -102,6 +119,9 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    /**
+     * Moves the ball according to its current speed.
+     */
     private void moveBall()
     {
         //Moves the Ball according to direction and speed
@@ -109,6 +129,10 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    /**
+     * Checks for collision with players and reverses horizontal direction if touching.
+     * Plays a kick sound effect.
+     */
     private void checkPlayerBounce()
     {
         //If Ball touches Player : horizontal speed turns negative 
@@ -121,6 +145,11 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    /**
+     * Changes the vertical direction and slightly increases horizontal 
+     * speed when bouncing off walls to increase difficulty as game 
+     * progresses.
+     */
     private void bounce()
     {
         //Changes direction of ball : opposite direction 
@@ -139,6 +168,9 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    /**
+     * Checks for collisions with the top and bottom edges of the world and triggers bounce.
+     */
     private void checkWallBounce()
     {
         //Checks if ball touching top or bottom part of the world 
@@ -156,6 +188,10 @@ public class DoublePlayerBall extends Actor
         
     }
     
+    /**
+     * Checks if the ball has passed players, indicating a score.
+     * Updates the score and resets the ball position.
+     */
     private void checkEdges() {
         if (getX() <= 0) {
             // Player 2 scores
@@ -174,12 +210,20 @@ public class DoublePlayerBall extends Actor
         }
     }
     
+    
+    /**
+     * Resets the ball to the center of the world and delays briefly.
+     */
     private void resetBall() {
         setLocation(getWorld().getWidth()/2, getWorld().getHeight()/2);
         Greenfoot.delay(200);
         
     }
     
+     /**
+     * Checks if either player has reached score  of 10 and ends the game 
+     * if so.
+     */
     private void checkGameOver()
     {
         DoublePlayerWorld world = (DoublePlayerWorld) getWorld();

@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+
 /**
- * Write a description of class BlockOne here.
+ * Represents Player One in the game.
+ * Handles movement, animation, and size/speed changes.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Player can move up and down using 'w' and 's' keys.
+ * The player can be enlarged, shrunk, and have its speed adjusted.
+ * 
  */
 
 public class PersonOne extends Actor
@@ -26,9 +29,17 @@ public class PersonOne extends Actor
     // Timer to control animation frame speed
     SimpleTimer animationTimer = new SimpleTimer();
     
-    //Timer
+    //Speed variable and state
     private boolean isEnlarged = false;
     private int baseSpeed = 10;
+    
+    //Keeps track of which animation frame is showing
+    int imageIndex = 0;
+    
+    /**
+     * Constructor for PersonOne.
+     * Loads animation image and timer.
+     */
     public PersonOne(){
         for(int i = 0; i < idle.length; i++)
         {
@@ -42,7 +53,7 @@ public class PersonOne extends Actor
         
     }
     
-    //Enlarges image
+    //Enlarges image by twice it's original size 
     public void enlarge()
     {
         isEnlarged = true;
@@ -60,16 +71,25 @@ public class PersonOne extends Actor
         
     }
    
+    /**
+     * Increases the player's speed by 10 units.
+     */
     public void changeSpeed()
     {
         baseSpeed = baseSpeed + 10;
     }
     
+    /**
+     * Resets the player's speed to the default value.
+     */
     public void resetSpeed()
     {
         baseSpeed=10;
     }
     
+    /**
+     * Shrinks the player back to original size by restoring original animation frames.
+     */
     public void shrink()
     {
         isEnlarged = false;
@@ -83,6 +103,15 @@ public class PersonOne extends Actor
     
     public void act()
     {
+        movePlayer();
+        
+    }
+    
+    /**
+     * Moves player up or down based on 'w' and 's' key presses.
+     */
+    public void movePlayer()
+    {
         if(Greenfoot.isKeyDown("w"))
         {
             // Move up
@@ -95,8 +124,11 @@ public class PersonOne extends Actor
             animatePersonOne();
         }
     }
-    //Keeps track of which animation frame is showing
-    int imageIndex = 0;
+    
+    
+    /**
+     * Animates the player by cycling through frames every 200ms.
+     */
     public void animatePersonOne()
     {
         if(animationTimer.millisElapsed() < 200)
