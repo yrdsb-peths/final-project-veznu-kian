@@ -21,6 +21,8 @@ public class DoublePlayerWorld extends World
     
     GreenfootSound crowd = new GreenfootSound("sounds/crowd.mp3");
     GreenfootSound backgroundMusic = new GreenfootSound("sounds/soccer-stadium-10-6709.mp3");
+    
+    
     public DoublePlayerWorld() {
         super(600, 400, 1);
         
@@ -54,6 +56,9 @@ public class DoublePlayerWorld extends World
         addObject(player2Label, getWidth()/2+30, 45);
     }
     
+    /*
+     * This method when called, adds a point to player 1
+     */
     public void addScoreToPlayer1() {
         //Add's a point to player 1's score and updates the label
         player1Score++;
@@ -62,6 +67,9 @@ public class DoublePlayerWorld extends World
         crowd.play();
     }
     
+    /*
+     * This method when called, adds a point to player 2
+     */
     public void addScoreToPlayer2() {
         // adds a point to player 2's score and updates the label
         player2Score++;
@@ -70,6 +78,9 @@ public class DoublePlayerWorld extends World
         crowd.play();
     }
     
+    /*
+     * This method when called sets the screen to the game over screen
+     */
     public void gameOver()
     {
         //ends the game and transitions to the EndWorld screen.

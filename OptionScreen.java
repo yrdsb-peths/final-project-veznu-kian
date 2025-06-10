@@ -28,6 +28,10 @@ public class OptionScreen extends World
         
     }
     
+    /*
+     * This method when called, plays an arcade soundtrack, and checks if 's' is pressed
+     * for the singleplayer world or 'd' is pressed for the double player world.
+     */
     public void act()
     {
         arcademusic.play();

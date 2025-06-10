@@ -23,7 +23,11 @@ public class EndWorld extends World
         
         
     }
-    
+    /*
+     * When called, this method checks if the shift key is pressed which transitions the
+     * world to the option screen, otherwise when the delete key is pressed it will go 
+     * back to the titlescreen world. 
+     */
     public void act()
     {
         //Check if the space key is pressed

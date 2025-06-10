@@ -49,7 +49,7 @@ public class SinglePlayerWorld extends World {
     }
     
     
-    //method to adding score to each variable
+    //methods to adding score to each variable
     public void addScoreToPlayer1() {
         player1Score++;
         player1Label.setValue(player1Score);
@@ -82,7 +82,8 @@ public class SinglePlayerWorld extends World {
             
         }
     }
-
+    
+    // Adds a banana randomly on a random place within the game field
     public void addBanana()
     {
         removeObjects(getObjects(Banana.class));
@@ -98,6 +99,7 @@ public class SinglePlayerWorld extends World {
         
     }
     
+    // Adds a star to the game field at a random point 
     public void addStar()
     {
         removeObjects(getObjects(Star.class));
@@ -111,6 +113,8 @@ public class SinglePlayerWorld extends World {
             
         }
     }
+    
+    //When called, set the screen to the game over screen.
     public void gameOver()
     {
         EndWorld gameOver = new EndWorld();
