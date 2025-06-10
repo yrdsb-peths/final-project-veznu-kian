@@ -96,5 +96,6 @@ public class DoublePlayerWorld extends World
         //ends the game and transitions to the EndWorld screen.
         EndWorld gameOver = new EndWorld();
         Greenfoot.setWorld(gameOver);
+        arcadeMusic.stop();
     }   
 }

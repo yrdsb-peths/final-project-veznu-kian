@@ -127,5 +127,6 @@ public class SinglePlayerWorld extends World {
     {
         EndWorld gameOver = new EndWorld();
         Greenfoot.setWorld(gameOver);
+        arcadeMusic.stop();
     }    
 }
