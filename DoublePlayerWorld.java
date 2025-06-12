@@ -32,7 +32,7 @@ public class DoublePlayerWorld extends World
         arcadeMusic.play();
         arcadeMusic.setVolume(50);
         
-        setBackground("images/background_soccer.jpg "); // set the background image
+        setBackground("images/background_soccer.jpg"); // set the background image
         
         DoublePlayerScore board = new DoublePlayerScore();
         addObject(board,getWidth()/2,40);

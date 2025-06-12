@@ -20,7 +20,7 @@ public class SinglePlayerWorld extends World {
         super(600, 400, 1);
         
         //Set background of game
-        setBackground("images/background_soccer.jpg ");
+        setBackground("images/background_soccer.jpg");
         
         //Add ball to world
         SinglePlayerBall ball = new SinglePlayerBall();
